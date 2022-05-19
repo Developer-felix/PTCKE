@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'transaction',
     'ussd',
     'wallet',
+    'otp',
 ]
 
 MIDDLEWARE = [

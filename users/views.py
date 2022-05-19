@@ -1,6 +1,10 @@
+import datetime
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from pytz import utc
+from otp.models import Otps
+from otp.views import random_number_generator
 
 from users.models import Account
 
@@ -73,10 +77,40 @@ def register(request):
                 country = country
             )
             parent.save()
-            return redirect('otp/')
+
+            phonenumber = phone
+            otp_number = random_number_generator(size=4)
+            try:
+                #Check number if it exist
+                check_number_if_otp_exists = Otps.objects.get(phone_number=phone)
+            except:
+                check_number_if_otp_exists = {}
+            
+            if bool(check_number_if_otp_exists) == False:
+                otp = Otps(
+                    phone_number = phone,
+                    otp = otp_number
+                )
+                print(otp_number)
+                otp.save()
+                print("OTP Saved Sucessfull")
+
+                # add otp id to the user model to authenticate before login
+                try:
+                    Account.objects.filter(phone_number=phone).update(
+                        otp=Otps.objects.filter(otp=otp_number))
+                except:
+                    print("none")
+
+            elif bool(check_number_if_otp_exists) == True:
+                new_otp = Otps.objects.filter(phone_number=phone).update(otp=otp_number)
+                print(otp)
+                print("OTP updated")
+
+            return redirect('otp/?phone='+phone)
 
         except:
-            return redirect('register/')
+            return redirect('users:ptc-register')
         print("Done")
 
         print(username)
@@ -89,6 +123,26 @@ def reset_password(request):
     return render(request,'reset_password.html')
 
 def otp(request):
+    if request.method == "POST":
+        phone = request.GET.get('phone')
+        otp = request.POST.get('otp')
+        print(phone)
+        print(otp)
+
+        #Validate otp to authenticate the user
+        validate_otp = Otps.objects.filter(phone_number=phone)
+        for otps in validate_otp:
+            if  str(otp) == str(otps.otp):
+                if datetime.datetime.now().replace(tzinfo=utc) <= (otps.expire_at.replace(tzinfo=utc)):
+                # update validation and mark the otp was successfully validated
+                    Otps.objects.filter(otp=otp).update(is_otp_authenticated=True)
+
+                    print("Authenticated")
+                    return redirect('users:ptc_parent_dashboard')
+                else:
+                    print("Fail")
+            else:
+                print("fail2")
     return render(request,'parent/otp.html')
 
 def child_dashboard(request):

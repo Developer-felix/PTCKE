@@ -5,6 +5,8 @@ class Account(models.Model):
     phone = models.CharField(max_length=255,blank=True,null=True)
     pin = models.CharField(max_length=6,blank=True,null=True)
     country = models.CharField(max_length=6,blank=True,null=True)
+    otp = models.ForeignKey("otp.Otps", blank=True,
+                            null=True, on_delete=models.CASCADE)
     is_parent = models.BooleanField(default=False)
     is_parent = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
