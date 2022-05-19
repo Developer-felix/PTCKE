@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 
+from users.models import Account
+
 users = [
     {
         "phone" : "25417713943",
@@ -56,6 +58,31 @@ def login(request):
 
 def register(request):
     data = {}
+    if request.method == "POST":
+        username = request.POST.get('username')
+        phone = request.POST.get('phone')
+        country = request.POST.get('country')
+        pin = request.POST.get('pin')
+        is_parent = True
+
+        try:
+            parent = Account(
+                phone = phone,
+                pin = pin,
+                username = username,
+                country = country
+            )
+            parent.save()
+            return redirect('otp/')
+
+        except:
+            return redirect('register/')
+        print("Done")
+
+        print(username)
+
+        print(phone)
+
     return render(request,'parent/registration.html',data)
 
 def reset_password(request):
