@@ -1,0 +1,92 @@
+.text-muted {
+    opacity: 0.6;
+    color: inherit !important;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+h1,
+.h1 {
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+p {
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.small, small{
+    line-height: 1.22;
+}
+
+strong {
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+.text-color-theme {
+    color: var(--fimobile-theme-color);
+}
+
+.fw-medium {
+    font-weight: 600;
+}
+
+.size-10 {
+    font-size: 10px;
+    line-height: 12px;
+}
+.size-12 {
+    font-size: 12px;
+}
+.size-18 {
+    font-size: 18px;
+}
+.size-20 {
+    font-size: 20px;
+}
+.size-22 {
+    font-size: 22px;
+}
+.size-32 {
+    font-size: 32px;
+}
+
+.dark-bg {
+    color: var(--fimobile-theme-text);
+    a,
+    .text-color-theme {
+        color: var(--fimobile-theme-text);
+    }
+    .form-control,
+    label {
+        color: #000000;
+    }
+}

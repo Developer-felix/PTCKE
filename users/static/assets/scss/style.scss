@@ -1,0 +1,153 @@
+/*
+==================================
+Table of content 
+==================================
+
+1. variable
+2. Bootstrap default css
+3. utility
+4. text
+5. body
+6. button
+7. form element
+8. loader
+9. header
+10. avatar
+11. sidebar
+12. card
+13. swiper sliders
+14. list 
+15. footer
+16. dark mode
+17. filter
+18. Full calendar
+19. Logo
+20. RTL
+
+*/
+
+/* template variables for standard action color should be removed from '../vendor/bootstrap-5/scss/variables' */
+@import "variables";
+
+/*!
+ * Bootstrap v5.0.1 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
+@import "../vendor/bootstrap-5/scss/functions";
+@import "../vendor/bootstrap-5/scss/variables";
+@import "../vendor/bootstrap-5/scss/mixins";
+@import "../vendor/bootstrap-5/scss/utilities";
+
+// Layout & components
+@import "../vendor/bootstrap-5/scss/root";
+@import "../vendor/bootstrap-5/scss/reboot";
+@import "../vendor/bootstrap-5/scss/type";
+@import "../vendor/bootstrap-5/scss/images";
+@import "../vendor/bootstrap-5/scss/containers";
+@import "../vendor/bootstrap-5/scss/grid";
+@import "../vendor/bootstrap-5/scss/tables";
+@import "../vendor/bootstrap-5/scss/forms";
+@import "../vendor/bootstrap-5/scss/buttons";
+@import "../vendor/bootstrap-5/scss/transitions";
+@import "../vendor/bootstrap-5/scss/dropdown";
+@import "../vendor/bootstrap-5/scss/button-group";
+@import "../vendor/bootstrap-5/scss/nav";
+@import "../vendor/bootstrap-5/scss/navbar";
+@import "../vendor/bootstrap-5/scss/card";
+@import "../vendor/bootstrap-5/scss/accordion";
+@import "../vendor/bootstrap-5/scss/breadcrumb";
+@import "../vendor/bootstrap-5/scss/pagination";
+@import "../vendor/bootstrap-5/scss/badge";
+@import "../vendor/bootstrap-5/scss/alert";
+@import "../vendor/bootstrap-5/scss/progress";
+@import "../vendor/bootstrap-5/scss/list-group";
+@import "../vendor/bootstrap-5/scss/close";
+@import "../vendor/bootstrap-5/scss/toasts";
+@import "../vendor/bootstrap-5/scss/modal";
+@import "../vendor/bootstrap-5/scss/tooltip";
+@import "../vendor/bootstrap-5/scss/popover";
+@import "../vendor/bootstrap-5/scss/carousel";
+@import "../vendor/bootstrap-5/scss/spinners";
+@import "../vendor/bootstrap-5/scss/offcanvas";
+
+// Helpers
+@import "../vendor/bootstrap-5/scss/helpers";
+
+// Utilities
+@import "../vendor/bootstrap-5/scss/utilities/api";
+// scss-docs-end import-stack
+
+ 
+
+/*!
+ FiMobile customize css starts here 
+ * FiMobile v2 (https://maxartkiller.com/)
+ * Copyright 2021 Maxartkiller 
+ */
+
+/* 2. variables */
+@import "variables";
+
+/* 3. utility */
+@import "utility";
+
+/* 4. text */
+@import "text";
+
+/* 5. body */
+@import "body";
+ 
+/* 6. button */
+@import "button";
+ 
+/* 7. Form elements */
+@import "_form";
+
+/* 8. loader */
+@import "loader";
+
+/* 9. header */
+@import "header";
+
+/* 10. avatar */
+@import "avatar";
+
+/* 11. sidebar */
+@import "sidebar";
+
+/* 12. card */
+@import "card_toast_modal";
+
+/* 13. swiper sliders */
+@import "swiperslides";
+
+/* 14. list */
+@import "list";
+ 
+/* 15. footer */
+@import "footer";
+ 
+/* 16. footer */
+@import "darkmode";
+ 
+/* 17. Filter */
+@import "filter";
+
+/* 18. Calendar */
+@import "fullcalendar";
+
+/* 19. Logo */
+@import "logo";
+ 
+/* 20. RTL layout */
+@import "rtl";
+
+/* 20. tabs layout */
+@import "tabs";
+ 
+ 

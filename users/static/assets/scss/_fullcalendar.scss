@@ -1,0 +1,189 @@
+.fc{
+    border-radius: 5px;
+    overflow: hidden;
+
+    a{
+        text-decoration: none;
+    }
+    .fc-toolbar-title{
+       
+        font-size: 16px;
+    }
+    .fc-button{
+        padding: .275em .475em;
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+    .fc-toolbar.fc-header-toolbar {
+        margin-bottom: 0em;
+        padding: 10px 15px;
+       
+
+        .fc-button{
+           
+            &:focus{
+                box-shadow: none;
+                outline: none;
+            }
+        }
+    }
+    &.fc-theme-standard {
+        table{ 
+            border: 0 none;
+            border-collapse: collapse;
+            th{
+                
+                font-size: 14px;
+                text-decoration: none;
+                padding: 10px 0;
+                line-height: 20px;
+                border:none;
+
+                a.fc-col-header-cell-cushion {                   
+                    font-weight: normal;
+                }
+            }
+            
+            td{
+                border: none;
+            }
+            table{
+                td{
+                    background-color: transparent;
+                    color: inherit;
+                    font-size: 14px;
+                    text-decoration: none;
+                    padding: 0; 
+                    border: 1px solid rgba(190,190,190,0.3);
+    
+                    a{
+                        color: inherit;
+                        font-weight: normal;
+                    }
+                    
+                    .fc-daygrid-more-link{
+                        font-size: 10px; 
+                    }
+                    .fc-daygrid-day-events {
+                        margin-top: -8px;
+                    }
+
+                    &:first-child{
+                        border-left: none
+                    }
+
+                    &:last-child{
+                        border-right: none
+                    }
+                }
+                tr:first-child{
+                    td{
+                        border-bottom: none
+                    }
+                }
+                tr:last-child{
+                    td{
+                        border-bottom: none
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:480px){
+    .fc.fc-theme-standard table table td .fc-daygrid-more-link{
+        height: 8px;
+        width: 8px;
+        border-radius: 5px;
+        text-indent: 15px;
+        overflow: hidden;
+        display: block;
+    }
+}
+
+
+
+/* date range picekr */
+.calendar-daterange{
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+.daterange-center.daterangepicker {
+    margin: 0 auto !important;
+    right: 0 !important;
+    left: 0 !important;
+    top: 84px !important;
+    width: 250px;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--fimobile-card-color);
+  
+    &:before,
+    &:after {
+      display: none;
+    }
+    .drp-buttons {
+      .drp-selected {
+        display: none;
+      }
+      .cancelBtn {
+       // color: $text-color-theme-secondary;
+        background: transparent;
+        font-size: 14px;
+      }    
+      .cancelBtn {
+        color: var(--fimobile-theme-color-light);
+        background: transparent;
+        font-size: 14px;
+        font-weight: normal;
+      }
+      .applyBtn {
+        background-color: var(--fimobile-theme-color);
+        color: var(--fimobile-theme-text);
+        border: 0;
+        border-radius: 5px;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 5px 15px;
+        font-weight: normal;
+      }
+    }
+    .drp-calendar.left,
+    .drp-calendar.right {
+      padding: 10px;
+      background: transparent;
+      .calendar-table {
+        border: 0;
+        background: transparent;
+        th,
+        td {
+          line-height: 28px;
+  
+          &.off,
+          &.off.start-date,        
+          &.off.end-date {
+            background-color: var(--fimobile-theme-text);
+          }
+          &.in-range,
+          &.off.in-range{
+            background-color: var(--fimobile-theme-bordercolor);
+          }
+          &.active,
+          &.active:hover,
+          &.in-range.start-date,
+          &.in-range.end-date {
+            background-color: var(--fimobile-theme-color);
+          }
+        }
+      }
+    }
+  }
+  

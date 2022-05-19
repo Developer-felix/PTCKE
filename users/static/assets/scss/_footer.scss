@@ -1,0 +1,182 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    border-radius: var(--fimobile-rounded) var(--fimobile-rounded) 0 0;
+    background-color: var(--fimobile-footer);
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.07);
+    -webkt-box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.07);
+    @extend .transition-05;
+
+    .nav {
+        align-items: center;
+        max-width: 480px;
+        margin: 0 auto;
+
+        .nav-item {
+            height: 60px;
+
+            .nav-link {
+                text-align: center;
+                background: transparent;
+                align-self: center;
+                -webkit-align-self: center;
+                -moz-align-self: center;
+                height: 100%;
+                line-height: 44px;
+                color: var(--fimobile-footer-text);
+                padding: calc(var(--fimobile-padding) - 5px) calc(var(--fimobile-padding) - 10px);
+
+                span {
+                    line-height: 20px;
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    .nav-icon {
+                        font-size: 17px;
+                        height: 20px;
+                        line-height: 20px;
+                        width: 20px;
+                        display: inline-block;
+                        margin: 0 auto;
+                    }
+                    .nav-text {
+                        font-size: 10px;
+                        line-height: 15px;
+                        display: block;
+                    }
+                }
+                &.active {
+                    color: var(--fimobile-footer-text-active);
+                }
+            }
+
+            &.centerbutton {
+                padding: 10px;
+                transition: none;
+
+                .nav-link {
+                    position: relative;
+                    padding: 8px;
+                    height: 76px;
+                    width: 76px;
+                    margin: 0 auto;
+                    border-radius: 0 0 40px 40px;
+                    margin-top: -30px;
+                    transition: none;
+
+                    & > span {
+                        height: 60px;
+                        line-height: 56px;
+                        width: 60px;
+                        border-radius: 30px;
+                        margin: 0px auto 0 auto;
+                        color: var(--fimobile-theme-text);
+                        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+                        -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+                        -webkt-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+                        img {
+                            opacity: 1;
+                            width: 16px;
+                            height: 25px;
+                            vertical-align: middle;
+                            @extend .transition-05;
+                        }
+                        i.close{
+                            opacity: 0;
+                            height: 24px;
+                            width: 24px;
+                            font-size: 0;
+                            line-height: 24px;
+                            display: inline-block;
+                            transform: rotate(-180deg);
+                            -webkit-transform: rotate(-180deg);
+                            -moz-transform: rotate(-180deg);
+                            @extend .transition-05;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 26px;
+                            margin: 0 auto;
+                        }
+                    }
+                    .nav-menu-popover {
+                        height: auto;
+                        padding: var(--fimobile-padding);
+                        border-radius: var(--fimobile-rounded);
+                        background-color: var(--fimobile-theme-color-2);
+                        color: var(--fimobile-theme-text);
+                        position: absolute;
+                        bottom: 100%;
+                        width: 320px;
+                        left: -160px;
+                        margin-left: 38px;
+                        display: none;
+                    }
+
+                    &.active {
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            right: 100%;
+                            top: 0;
+                            width: 20px;
+                            height: 20px;
+                            background-image: radial-gradient(
+                                ellipse at 0% 100%,
+                                transparent 0%,
+                                transparent 70%,
+                                var(--fimobile-theme-color-2) 72%
+                            );
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 100%;
+                            top: 0;
+                            width: 20px;
+                            height: 20px;
+                            background-image: radial-gradient(
+                                ellipse at 100% 100%,
+                                transparent 0%,
+                                transparent 70%,
+                                var(--fimobile-theme-color-2) 72%
+                            );
+                        }
+                        background-color: var(--fimobile-theme-color-2);
+                        .nav-menu-popover {
+                            display: flex;
+                        }
+                        &> span{
+                            img {
+                                opacity: 0;
+                            }
+
+                            i.close{
+                                opacity: 1;
+                                transform: rotate(0deg);
+                                -webkit-transform: rotate(0deg);
+                                -moz-transform: rotate(0deg);                                
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-open {
+    .footer {
+        margin-bottom: -80px;
+    }
+}
+
+.footer-info {
+    padding: var(--fimobile-padding) 0px;
+    line-height: 30px;
+}

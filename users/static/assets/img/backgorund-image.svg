@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375.364" height="350.057" viewBox="0 0 375.364 350.057">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.251" cy="0.324" r="0.749" gradientTransform="translate(0 0.032) scale(1 0.902)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fc91bc"/>
+      <stop offset="0.607" stop-color="#fe4470"/>
+      <stop offset="1" stop-color="#e61142"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.251" cy="0.324" r="0.749" gradientTransform="translate(0 0.032) scale(1 0.902)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#57bdff"/>
+      <stop offset="0.506" stop-color="#4f77fb"/>
+      <stop offset="1" stop-color="#6528cf"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-3" cx="0.251" cy="0.324" r="0.749" gradientTransform="translate(0 0.032) scale(1 0.902)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffc917"/>
+      <stop offset="0.732" stop-color="#fe5f19"/>
+      <stop offset="1" stop-color="#bc0d00"/>
+    </radialGradient>
+  </defs>
+  <g id="backgorund-image" transform="translate(0.157 -461.355)">
+    <path id="Path_45" data-name="Path 45" d="M0,550.959s99.061-5.565,117.983,54.539,27.826,90.157,70.122,91.27,91.27-11.131,115.757,21.148,27.826,60.1,46.748,65.67,23.374,27.826,23.374,27.826H0Z" fill="#fff" opacity="0.1"/>
+    <circle id="Ellipse_28" data-name="Ellipse 28" cx="27" cy="27" r="27" transform="translate(23 687)" fill="url(#radial-gradient)"/>
+    <circle id="Ellipse_29" data-name="Ellipse 29" cx="13.5" cy="13.5" r="13.5" transform="translate(326 646)" fill="url(#radial-gradient-2)"/>
+    <circle id="Ellipse_30" data-name="Ellipse 30" cx="16.5" cy="16.5" r="16.5" transform="translate(229 729)" fill="url(#radial-gradient-3)"/>
+    <path id="Path_46" data-name="Path 46" d="M0,462.343s70.208,11.13,106.168,56.509,27.4,119.01,66.783,144.7,89.044-9.418,121.579,12.843,24.83,86.475,53.084,97.606,26.542,34.248,26.542,34.248" fill="none" stroke="#e7ebfc" stroke-width="2" opacity="0.1"/>
+    <rect id="Rectangle_18" data-name="Rectangle 18" width="14" height="14" transform="translate(60.404 581.114) rotate(48)" fill="#ffbd17"/>
+    <rect id="Rectangle_19" data-name="Rectangle 19" width="11" height="11" transform="translate(347.487 728.576) rotate(82)" fill="#f73563"/>
+    <rect id="Rectangle_20" data-name="Rectangle 20" width="7" height="7" transform="translate(94.932 775.309) rotate(82)" fill="#fff"/>
+    <rect id="Rectangle_21" data-name="Rectangle 21" width="6.986" height="6.986" transform="matrix(0.719, 0.695, -0.695, 0.719, 156.475, 740.561)" fill="#f73563"/>
+    <path id="Polygon_2" data-name="Polygon 2" d="M5.5,0,11,9H0Z" transform="matrix(0.719, 0.695, -0.695, 0.719, 117.248, 646.06)" fill="#e7ebfc" opacity="0.5"/>
+    <path id="Polygon_3" data-name="Polygon 3" d="M5.5,0,11,9H0Z" transform="matrix(0.719, 0.695, -0.695, 0.719, 305.248, 775.309)" fill="#e7ebfc" opacity="0.5"/>
+  </g>
+</svg>

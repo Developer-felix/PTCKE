@@ -1,0 +1,69 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block main-content %}
+    <!-- Begin page content -->
+    <main class="container-fluid h-100">
+        <div class="row h-100 overflow-auto">
+            <div class="col-12 text-center mb-auto px-0">
+                <header class="header">
+                    <div class="row">
+                        <div class="col-auto"></div>
+                        <div class="col">
+                            <div class="logo-small">
+                                <img src="{% static 'assets/img/logo.png' %}" alt="">
+                                <h5>PTC Manager</h5>
+                            </div>
+                        </div>
+                        <div class="col-auto"></div>
+                    </div>
+                </header>
+            </div>
+            <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto align-self-center text-center py-4">
+                <h1 class="mb-4 text-color-theme">Sign in</h1>
+                <form class="was-validated needs-validation" method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group form-floating mb-3 is-valid">
+                        <input type="text" class="form-control" name="phone"  id="phone" placeholder="Enter Phone Number">
+                        <label class="form-control-label" for="phone">Phone Number</label>
+                    </div>
+
+                    <div class="form-group form-floating is-invalid mb-3">
+                        <input type="password" class="form-control " name="pin" id="pin" placeholder="Enter Pin">
+                        <label class="form-control-label" for="pin">Pin</label>
+                        <button type="button" class="text-danger tooltip-btn" data-bs-toggle="tooltip"
+                            data-bs-placement="left" title="Enter valid Pin" id="passworderror">
+                            <i class="bi bi-info-circle"></i>
+                        </button>
+                    </div>
+                    <p class="mb-3 text-center">
+                        <a href="forgot-password.html" class="">
+                            Forgot your password?
+                        </a>
+                    </p>
+
+                    <button type="submit" class="btn btn-lg btn-default w-100 mb-4 shadow">
+                        <!--onclick="window.location.replace('index.html');"-->
+                        Sign in
+                    </button>
+                </form>
+                <p class="mb-2 text-muted">Don't have account?</p>
+                <a href="{% url 'users:ptc-register' %}" target="_self" class="">
+                    Sign up <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+            <div class="col-12 text-center mt-auto">
+                <div class="row justify-content-center footer-info">
+                    <div class="col-auto">
+                        <p class="text-muted">Or you can continue with </p>
+                    </div>
+                    <div class="col-auto ps-0">
+                        <a href="#" class="p-1"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="p-1"><i class="bi bi-google"></i></a>
+                        <a href="#" class="p-1"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock main-content %}

@@ -1,0 +1,124 @@
+.rtl{
+    direction: rtl;
+
+    .tooltip-btn {
+        left: 5px;
+        right: auto;
+    }
+    .nav{
+        padding-right: 0;
+    }
+    .dropdown-menu{
+        text-align: right
+    }
+    .toast-header .btn-close {
+        margin-left: -.375rem;
+        margin-right: .75rem;
+    }
+    .me-auto {
+        margin-right: 0 !important;
+        margin-left: auto !important;
+    }
+  
+    .ps-0 {
+        padding-left: var(--fimobile-padding) !important;
+        padding-right: 0
+    }
+    .pe-0 {
+        padding-right: var(--fimobile-padding) !important;
+        padding-left: 0
+    }
+    .float-end {
+        float: left !important;
+    }
+    .start-auto {
+        left: 0 !important;
+        right: auto !important;
+    }
+    .text-end {
+        text-align: left !important;
+    }
+    .form-floating>label{
+        left: auto;
+        right: 0;
+    }
+    .sidebar-wrap{
+        left: auto;
+        right: -100%;
+
+        .closemenu{
+            right: auto;
+            left: -25px;
+        }
+
+        .sidebar{
+            float: right;
+
+            .nav {
+                .nav-item {
+                    .nav-link>.icon{
+                        margin-left: 15px;
+                        margin-right: 0;
+                    }
+                }
+
+            }
+        }
+
+        &.sidebar-overlay {
+            .sidebar{
+                left: auto;
+                right: 0;
+
+           }
+        }
+
+        &.sidebar-fullmenu{
+            .closemenu{
+                left: 15px;
+                right: auto;
+            }
+            .nav {
+                .nav-item {
+                    .nav-link>.icon{
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+
+            }
+        }
+        
+    }
+
+    &.menu-open{
+        .sidebar-wrap{
+            right: 0;   
+            &.sidebar-pushcontent{
+                &+main {
+                    margin-left: auto;
+                    transform: scale(1);
+                    margin-right: 280px;
+                }
+            } 
+        }
+    }
+
+    .summayswiper .swiper-wrapper .swiper-slide,
+    .cardswiper .swiper-wrapper .swiper-slide,
+    .connectionwiper .swiper-wrapper .swiper-slide,
+    .summayswiper .swiper-wrapper .swiper-slide{
+        &:first-child{
+            padding-left: 5px;
+            padding-right: var(--fimobile-padding);
+        }
+        
+        &:last-child{
+            padding-right: 5px;
+            padding-left: var(--fimobile-padding);
+        }
+    }
+    ol, ul{
+        padding-right: 0;
+    }
+}

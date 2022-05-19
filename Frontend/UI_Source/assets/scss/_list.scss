@@ -1,0 +1,184 @@
+.list-group {
+    .list-group-item {
+        padding: var(--fimobile-padding);
+    }
+
+    &.bg-none {
+        .list-group-item {
+            background-color: transparent;
+            border-color: var(--fimobile-theme-bordercolor);
+        }
+    }
+}
+
+/* chat list */
+.chat-list {
+    margin: 0px auto 0px auto;
+    font-size: 15px;
+
+    .figure,
+    figure,
+    iframe,
+    video {
+        border-radius: var(--fimobile-rounded);
+        overflow: hidden;
+        display: block;
+        max-width: 100%;
+    }
+    .left-chat {
+        margin-bottom: 15px;
+
+        .chat-block {
+            background-color: var(--fimobile-theme-text);
+            padding: 15px;
+            border-radius: var(--fimobile-rounded) var(--fimobile-rounded) var(--fimobile-rounded) 0px;
+            margin-right: 3px;
+            position: relative;
+            width: auto;
+            display: inline-block;
+            margin-bottom: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            max-width: 90%;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0px;
+                bottom: -16px;
+                height: 8px;
+                width: 8px;
+                border-radius: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 10px;
+                z-index: 1;
+                border-top-color: var(--fimobile-theme-text);
+                border-left-color: var(--fimobile-theme-text);
+            }
+        }
+        .time {
+            padding-left: 15px;
+        }
+    }
+
+    .right-chat {
+        margin-bottom: 15px;
+        text-align: right;
+
+        .chat-block {
+            text-align: left;
+            background-color: var(--fimobile-theme-color);
+            color: var(--fimobile-theme-text);
+            padding: 15px;
+            border-radius: var(--fimobile-rounded) var(--fimobile-rounded) 0px var(--fimobile-rounded);
+            margin-left: 3px;
+            position: relative;
+            width: auto;
+            display: inline-block;
+            margin-bottom: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            max-width: 90%;
+
+            &:before {
+                content: "";
+                position: absolute;
+                right: 0px;
+                bottom: -16px;
+                height: 8px;
+                width: 8px;
+                border-radius: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 10px;
+                border-right-color: var(--fimobile-theme-color);
+                border-top-color: var(--fimobile-theme-color);
+                z-index: 1;
+            }
+        }
+        .time {
+            padding-right: 15px;
+        }
+    }
+}
+.log-information {
+    li {
+        border: 0;
+        padding: 10px 15px 10px 40px !important;
+        background-color: transparent;
+
+        &:after {
+            content: "";
+            height: 100%;
+            width: 1px;
+            background: rgba(121, 121, 121, 0.2);
+            display: block;
+            position: absolute;
+            left: 20px;
+            top: 0;
+            z-index: 0;
+        }
+        &:before {
+            content: "";
+            height: 1px;
+            width: 20px;
+            background: rgba(121, 121, 121, 0.2);
+            display: block;
+            position: absolute;
+            left: 20px;
+            top: 22px;
+            z-index: 0;
+        }
+        .avatar {
+            position: absolute;
+            left: 13px;
+            top: 15px;
+            border-width: 3px;
+            border-style: solid;
+            z-index: 1;
+            background-color: var(--fimobile-theme-text);
+
+            &:after {
+                content: "";
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+        }
+        p {
+            margin: 0;
+        }
+    }
+    &.bubble-sheet {
+        li {
+            p {
+                padding: 15px 15px;
+                position: relative;
+                background-color: var(--fimobile-card-color);
+                box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.08);
+                -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.08);
+                -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.08);
+                -ms-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.08);
+                border-radius: var(--fimobile-rounded);
+                opacity: 1;
+
+                &:before {
+                    content: "";
+                    border-left: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    height: 10px;
+                    width: 10px;
+                    border-radius: 0px;
+                    position: absolute;
+                    left: -20px;
+                    top: 10px;
+                }
+            }
+        }
+    }
+}

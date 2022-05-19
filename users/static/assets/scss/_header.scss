@@ -1,0 +1,42 @@
+.header {
+    padding: var(--fimobile-padding);
+    line-height: 44px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    position: relative;
+    & >*{
+        z-index: 1;
+        position: relative;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0 0 var(--fimobile-rounded) var(--fimobile-rounded);
+        background-color: var(--fimobile-header-active);
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        -webkt-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        z-index: 0;
+        opacity: 0;
+        @extend .transition-05;
+    }
+    &.active {
+        &:after {
+            opacity: 0.95;
+        }
+        & > * {
+            z-index: 1;
+            position: relative;
+        }
+    }
+
+    p{
+        line-height: 20px;
+    }
+}
