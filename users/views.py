@@ -41,6 +41,12 @@ users = [
     },
 ]
 
+def splash(request):
+    return render(request,'splash.html')
+
+def landing(request):
+    return render(request,'landing.html')
+
 def login(request):
     data = {}
     if request.method == "POST":
@@ -56,7 +62,7 @@ def login(request):
             return redirect('child/dashboard/')
         
         else:
-            return redirect('')
+            return redirect('users:ptc-login')
 
     return render(request,'login.html',data)
 

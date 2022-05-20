@@ -1,7 +1,7 @@
 var static = "FiMobile-v2";
 var cacheassets = [
   "/splash.html",
-  "/landing.html",
+  "/landing",
   "/signin.html",
   "/signup.html",
   "/verify.html",

@@ -1,0 +1,2 @@
+rootProject.name = "PTC"
+include ':app'

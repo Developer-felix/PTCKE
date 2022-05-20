@@ -1,11 +1,13 @@
 from django.urls import path
 
-from users.views import login,register,otp,reset_password,parent_dashboard,child_dashboard
+from users.views import login,register,otp,reset_password,parent_dashboard,child_dashboard,splash,landing
 
 app_name = 'users'
 
 urlpatterns = [
-    path('', login,name='ptc-login'),
+    path('', splash,name='ptc-splash'),
+    path('landing.html/', landing,name='ptc-landing'),
+    path('login/', login,name='ptc-login'),
     path('register/', register,name='ptc-register'),
     path('register/otp/', otp,name='ptc-otp'),
     path('reset_password/', reset_password,name='ptc-reset_password'),

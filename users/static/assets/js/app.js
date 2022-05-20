@@ -7,7 +7,7 @@ $(window).on('load', function () {
     switch (body.attr('data-page')) {
         case "splash":
             setTimeout(function () {
-                window.location.replace("landing.html");
+                window.location.replace("/landing");
             }, 4000)
             break;
 
