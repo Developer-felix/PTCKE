@@ -3,6 +3,7 @@ package com.example.ptc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.webkit.WebSettings;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mywebView=(WebView) findViewById(R.id.webview);
         mywebView.setWebViewClient(new WebViewClient());
-        mywebView.loadUrl("https://ptcmanager.com/");
+        mywebView.loadUrl("https://earnest-pony-14d25d.netlify.app/");
         WebSettings webSettings=mywebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
     }
@@ -46,7 +47,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void statusBarColor(){
-        
+    private void statusbarcolor(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            getWindow().setStatusBarColor(getResources().getColor(R.color.white,this.getTheme()));
+        }
+        else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            getWindow().setStatusBarColor(getResources().getColor(R.color.white));
+        }
     }
 }

@@ -7,8 +7,40 @@
     tools:context=".MainActivity">
 
 
+
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <!--The screen for the internet-->
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nointernet">
+
+        <ImageView
+            android:id="@+id/no_internet_image"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="431dp"
+            android:src="@drawable/ptc"
+            android:layout_marginTop="128dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/no_internet_heading"
+            android:layout_below="@id/no_internet_image"
+            android:text="NO INTERNET CONECTION"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+
+            />
+
+    </RelativeLayout>
+
+
 </RelativeLayout>
