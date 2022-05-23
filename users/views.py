@@ -245,3 +245,5 @@ def parent_dashboard(request):
     }
     return render(request,'parent/dashboard.html',data)
 
+
+

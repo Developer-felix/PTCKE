@@ -629,10 +629,11 @@
                             <img src="{% static 'assets/img/centerbutton.svg' %}" class="nav-icon" alt="" />
                         </span>
                         <div class="nav-menu-popover justify-content-between">
-                            <button type="button" class="btn btn-lg btn-icon-text"
-                                onclick="window.location.replace('pay.html');">
-                                <i class="bi bi-credit-card size-32"></i><span>Top Up</span>
-                            </button>
+                            <a href="{% url 'users:ptc_wallet_top_up' %}">
+                                <button type="button" class="btn btn-lg btn-icon-text">
+                                    <i class="bi bi-credit-card size-32"></i><span>Top Up</span>
+                                </button>
+                            </a>
 
                             <button type="button" class="btn btn-lg btn-icon-text"
                                 onclick="window.location.replace('sendmoney.html');">
