@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from config.PTC_MPESA.lipa_na_mpesa_online import lipa_na_mpesa
+# from config.PTC_MPESA.lipa_na_mpesa_online import lipa_na_mpesa
 
 from wallet.models import Wallet
 
