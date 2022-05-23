@@ -16,6 +16,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 
+from wallet.models import Wallet
+
 
 users = [
     {
@@ -224,7 +226,22 @@ def child_dashboard(request):
     return render(request,'child/dashboard.html')
 
 def parent_dashboard(request):
+    global wallet_balance
+    user_id = request.user.id 
+    user_phone = request.user.phone_number
+    
+    def balance_func():
+        wallet = Wallet.objects.filter(user_id=user_id)
+        for wallet in wallet:
+            wallet_balance = wallet.account_balance
+            return wallet_balance
+    
+    print(user_id)
     if request.user.is_authenticated:
-        print("Loged In User")
-    return render(request,'parent/dashboard.html')
+        print("Loged In User as "+request.user.user_name)
+    
+    data = {
+        "balance" : balance_func()
+    }
+    return render(request,'parent/dashboard.html',data)
 
