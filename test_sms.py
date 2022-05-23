@@ -13,6 +13,7 @@ sms = africastalking.SMS
 
 
 # Use the service synchronously
-sms.send("Hello Message!", ["+254113206689"])
+response = sms.send("Hello Message!", ["+254717713943"])
+print(response)
 
 
