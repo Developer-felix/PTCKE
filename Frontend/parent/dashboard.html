@@ -316,7 +316,7 @@
                         <div class="swiper-wrapper">
                              {% for child in children %}
                             <div class="swiper-slide">
-                                <a href="profile.html" class="card text-center">
+                                <a href="{% url 'users:ptc_child_top_up' child.id%}" class="card text-center">
                                     <div class="card-body">
                                         <figure class="avatar avatar-50 shadow-sm mb-1 rounded-10">
                                             <img src="{% static 'assets/img/user2.jpg' %}" alt="">
