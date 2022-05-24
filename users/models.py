@@ -102,9 +102,9 @@ class Account(AbstractBaseUser, PermissionsMixin):
     second_name = models.CharField(max_length=255,null=True,blank=True)
     phone_number = models.CharField(max_length=255,null=True,blank=True,unique=True)
     email = models.CharField(max_length=255,null=True,blank=True)
-    parent = models.ForeignKey("self",on_delete=models.CASCADE,blank=True,null=True)
     otp = models.ForeignKey("otp.Otps", blank=True,
                              null=True, on_delete=models.CASCADE)
+    parent = models.ForeignKey("self",on_delete=models.CASCADE,blank=True,null=True)
     country = models.CharField(max_length=255,null=True,blank=True)
     latitude = models.CharField(max_length=255,null=True,blank=True)
     longitude = models.CharField(max_length=255,null=True,blank=True)
@@ -124,9 +124,5 @@ class Account(AbstractBaseUser, PermissionsMixin):
     class Meta:
         db_table = "tbl_accounts"
 
-    def __str__(self):
-        if self.organization_name == None:
-            return f'{self.first_name}  {self.second_name}'  
-        else:
-            return f'{self.organization_name}'
+    
 

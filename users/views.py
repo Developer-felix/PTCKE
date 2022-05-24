@@ -1,5 +1,6 @@
 import datetime
 from pyexpat.errors import messages
+from cv2 import split
 from django import forms
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
@@ -229,11 +230,15 @@ def parent_dashboard(request):
     global wallet_balance
     user_id = request.user.id 
     user_phone = request.user.phone_number
+
+    children = Account.objects.filter(parent_id=user_id)
     
     def balance_func():
         wallet = Wallet.objects.filter(user_id=user_id)
         for wallet in wallet:
             wallet_balance = wallet.account_balance
+            # x = wallet_balance.split(',',-3)
+            # print(x)
             return wallet_balance
     
     print(user_id)
@@ -241,9 +246,36 @@ def parent_dashboard(request):
         print("Loged In User as "+request.user.user_name)
     
     data = {
-        "balance" : balance_func()
+        "balance" : balance_func(),
+        "children" : children,
     }
     return render(request,'parent/dashboard.html',data)
+
+
+def add_child(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        phone = request.POST.get('phone')
+        country = request.POST.get('country')
+        pin = random_number_generator(size=4)
+        print("Try")
+        
+
+        child = Account(
+                phone_number = phone,
+                user_name = username,
+                password=pin,
+        )
+        child.parent = Account.objects.get(id=request.user.id)
+        child.is_child = True
+        child.country = country
+        child.user_type = 2
+        child.save()
+        # Account.objects.filter(phone_number=phone).update(parent=parent)
+        #Send Message for app  password and
+        print("Saved Child")
+
+    return render(request,'parent/add_child.html')
 
 
 

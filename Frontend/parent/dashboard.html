@@ -147,9 +147,9 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="blog.html" tabindex="-1">
+                            <a class="nav-link" href="{% url 'users:ptc_parent_add_child' %}" tabindex="-1">
                                 <div class="avatar avatar-40 rounded icon"><i class="bi bi-newspaper"></i></div>
-                                <div class="col">Blogs</div>
+                                <div class="col">Add Child</div>
                                 <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                             </a>
                         </li>
@@ -314,70 +314,18 @@
                     <!-- swiper users connections -->
                     <div class="swiper-container connectionwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="profile.html" class="card text-center">
-                                    <div class="card-body">
-                                        <figure class="avatar avatar-50 shadow-sm mb-1 rounded-10">
-                                            <img src="{% static 'assets/img/user4.jpg' %}" alt="">
-                                        </figure>
-                                        <p class="text-color-theme size-12 small">Nicolas</p>
-                                    </div>
-                                </a>
-                            </div>
-
+                             {% for child in children %}
                             <div class="swiper-slide">
                                 <a href="profile.html" class="card text-center">
                                     <div class="card-body">
                                         <figure class="avatar avatar-50 shadow-sm mb-1 rounded-10">
                                             <img src="{% static 'assets/img/user2.jpg' %}" alt="">
                                         </figure>
-                                        <p class="text-color-theme size-12 small">Shelvey</p>
+                                        <p class="text-color-theme size-12 small">{{child.user_name}}</p>
                                     </div>
                                 </a>
                             </div>
-
-                            <div class="swiper-slide">
-                                <a href="profile.html" class="card text-center">
-                                    <div class="card-body">
-                                        <figure class="avatar avatar-50 shadow-sm mb-1 rounded-10">
-                                            <img src="{% static 'assets/img/user3.jpg' %}" alt="">
-                                        </figure>
-                                        <p class="text-color-theme size-12 small">Amenda</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <a href="profile.html" class="card text-center">
-                                    <div class="card-body">
-                                        <figure class="avatar avatar-50 shadow-sm mb-1 rounded-10">
-                                            <img src="{% static 'assets/img/user1.jpg' %}" alt="">
-                                        </figure>
-                                        <p class="text-color-theme size-12 small">RXL15</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="profile.html" class="card text-center">
-                                    <div class="card-body">
-                                        <figure class="avatar avatar-50 shadow-sm mb-1 rounded-10">
-                                            <img src="{% static 'assets/img/user4.jpg' %}" alt="">
-                                        </figure>
-                                        <p class="text-color-theme size-12 small">Nicolas</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <a href="profile.html" class="card text-center">
-                                    <div class="card-body">
-                                        <figure class="avatar avatar-50 shadow-sm mb-1 rounded-10">
-                                            <img src="{% static 'assets/img/user2.jpg' %}" alt="">
-                                        </figure>
-                                        <p class="text-color-theme size-12 small">Shelvey</p>
-                                    </div>
-                                </a>
-                            </div>
+                             {% endfor %}
 
                         </div>
                     </div>

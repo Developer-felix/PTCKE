@@ -1,0 +1,58 @@
+
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block main-content %}
+
+    <!-- Begin page content -->
+    <main class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-12 text-center mb-auto px-0">
+                <header class="header">
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="{% url 'users:ptc-login' %}" target="_self" class="btn btn-light btn-44">
+                                <i class="bi bi-arrow-left"></i>
+                            </a>
+                        </div>
+                        <div class="col align-self-center">
+                            <h5>Add Child</h5>
+                        </div>
+                        <div class="col-auto">
+                            <a class="btn btn-light btn-44 invisible"></a>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto align-self-center text-center py-4">
+                <form class="was-validated" method="post">
+                    {% csrf_token %}
+                    <div class="form-floating is-valid mb-3">
+                        <input type="text" name="username" class="form-control" placeholder="Username"
+                            id="username">
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="form-floating is-valid mb-3">
+                        <select name="country"  class="form-control" id="country">
+                            <option selected>Kenya</option>
+                            <option>Uganda</option>
+                            <option>Ethopia</option>
+                            <option>Tanzania</option>
+                        </select>
+                        <label for="country">Country</label>
+                    </div>
+                    <div class="form-floating is-valid mb-3">
+                        <input type="text" name="phone" class="form-control" 
+                            placeholder="+254717713943" id="phone">
+                        <label for="phone">Enter Mpesa Phone Number</label>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-default w-100 mb-4 shadow"
+                        >
+                        <!-- onclick="window.location.replace('verify.html');" -->
+                        Save
+                    </button>
+                </form>
+            </div>
+           
+        </div>
+    </main>
+{% endblock main-content %}
