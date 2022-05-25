@@ -1,6 +1,5 @@
 import datetime
 from pyexpat.errors import messages
-from cv2 import split
 from django import forms
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
