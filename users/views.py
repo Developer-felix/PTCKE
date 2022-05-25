@@ -5,6 +5,7 @@ from django import forms
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from transaction.models import Transaction
 from pytz import utc
 from otp.models import Otps
 from otp.views import random_number_generator
@@ -230,6 +231,7 @@ def parent_dashboard(request):
     global wallet_balance
     user_id = request.user.id 
     user_phone = request.user.phone_number
+    transactions = Transaction.objects.filter(sender=user_id).order_by('-id')
 
     children = Account.objects.filter(parent_id=user_id)
     
@@ -248,6 +250,7 @@ def parent_dashboard(request):
     data = {
         "balance" : balance_func(),
         "children" : children,
+        "transactions" : transactions,
     }
     return render(request,'parent/dashboard.html',data)
 

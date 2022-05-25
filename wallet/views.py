@@ -52,16 +52,29 @@ def top_up_success(request):
 
 def transfer_cash(request,reciever_id):
     transaction = Transaction.objects.all()
+    users = Account.objects.all()
+    def get_user_details():
+        for user in users:
+            if user.id == reciever_id:
+                return user
+
+    def get_balance():
+        wallet = Wallet.objects.all()
+        for b in wallet:
+            if b.user_id == reciever_id:
+                balance = b.account_balance
+                return balance
     if request.method == 'POST':
         #Get post data from the sender 
-        sender = request.user.id
+        sender_id = request.user.id
+        sender = Account.objects.filter(id=sender_id)
         reciever = reciever_id
         ammount = request.POST.get("ammount")
         procedure = request.POST.get("procedure")
         print(sender)
         #geting the sender name
         try:
-            sender  = Wallet.objects.get(user_id = sender)
+            sender  = Wallet.objects.get(user_id = sender_id)
         except Wallet.DoesNotExist:
             sender = None
         print(sender)
@@ -88,7 +101,7 @@ def transfer_cash(request,reciever_id):
             
             users = Account.objects.filter(id=reciever)
             
-            receiver = Wallet.objects.get(user = request.data["reciever"])
+            receiver = Wallet.objects.get(user = reciever_id)
             #Updating the balance of the reciever after reciving the cash in the account
             receiver_balance = receiver.account_balance + int(ammount)
             print("Receiver Balalance :"+str(receiver_balance))
@@ -103,14 +116,25 @@ def transfer_cash(request,reciever_id):
             print(transaction_date)
                 
             #Update sender Query
-            Wallet.objects.filter(user_id=request.data["sender"]).update(account_balance=sender_balance)
+            Wallet.objects.filter(user=sender_id).update(account_balance=sender_balance)
                 
             #Update reciever Query
-            Wallet.objects.filter(user_id=request.data["reciever"]).update(account_balance=receiver_balance)
-            transaction = Transaction.objects.filter(sender_id=request.data["sender"]).update(transaction_id=generate_transaction_code_id())
+            Wallet.objects.filter(user=reciever_id).update(account_balance=receiver_balance)
+            transaction_id=generate_transaction_code_id()
+            transaction = Transaction(
+                sender=Account.objects.get(id=sender_id),
+                transaction_id=transaction_id,
+                reciever = Account.objects.get(id=reciever_id),
+                user = Account.objects.get(id=sender_id),
+                ammount = ammount,
+                )
             transaction.save()
-
-    return render(request,'child/child_top_up.html')              
+            print("Done")
+    data = {
+        "balance" : get_balance(),
+        "user":get_user_details(),
+    }
+    return render(request,'child/child_top_up.html',data)              
                 
                 # transaction_id = serializer.data["transaction_id"]
                 # send_transaction_message_response_to_reciever_phone(transaction_id=transaction_id,

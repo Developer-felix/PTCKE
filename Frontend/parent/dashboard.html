@@ -466,77 +466,25 @@
             <div class="row mb-4">
                 <div class="col-12 px-0">
                     <ul class="list-group list-group-flush bg-none">
+                        {% for transaction in transactions %}
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow rounded-10 ">
-                                        <img src="{% static 'assets/img/company4.jpg'%}" alt="">
+                                        <img src="{% static 'assets/img/user2.jpg'%}" alt="">
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="text-color-theme mb-0">Zomato</p>                                   
-                                    <p class="text-muted size-12">Food</p>
+                                    <p class="text-color-theme mb-0">{{transaction.reciever.user_name}}</p>                                   
+                                    <p class="text-muted size-12">Successful</p>
                                 </div>                                
                                 <div class="col align-self-center text-end">
-                                    <p class="mb-0">-25.00</p>                                   
-                                    <p class="text-muted size-12">Debit Card 4545</p>
+                                    <p class="mb-0">KSH. {{transaction.ammount}}</p>                                   
+                                    <p class="text-muted size-12">{{transaction.created_at}}</p>
                                 </div>
                             </div>
                         </li>
-                        
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow rounded-10">
-                                        <img src="{% static 'assets/img/company5.png' %}" alt="">
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="text-color-theme mb-0">Uber</p>                                   
-                                    <p class="text-muted size-12">Travel</p>
-                                </div>                                
-                                <div class="col align-self-center text-end">
-                                    <p class="mb-0">-26.00</p>                                   
-                                    <p class="text-muted size-12">Debit Card 4545</p>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow rounded-10">
-                                        <img src="{% static 'assets/img/company1.png' %}" alt="">
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="text-color-theme mb-0">Starbucks</p>                                   
-                                    <p class="text-muted size-12">Food</p>
-                                </div>                                
-                                <div class="col align-self-center text-end">
-                                    <p class="mb-0">-18.00</p>                                   
-                                    <p class="text-muted size-12">Cash</p>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow rounded-10">
-                                        <img src="{% static 'assets/img/company3.jpg' %}" alt="">
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="text-color-theme mb-0">Walmart</p>                                   
-                                    <p class="text-muted size-12">Clothing</p>
-                                </div>                                
-                                <div class="col align-self-center text-end">
-                                    <p class="mb-0">-105.00</p>                                   
-                                    <p class="text-muted size-12">Wallet</p>
-                                </div>
-                            </div>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
