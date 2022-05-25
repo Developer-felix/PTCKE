@@ -81,7 +81,7 @@ def transfer_cash(request,reciever_id):
         #getting phone number of the sender
         sender_phone_number = sender.user.phone_number
         print(f'Sender Phone Number : {sender_phone_number}')
-        sender_name_c = sender.user.user_name
+        sender_name_c = request.user.user_name
         
         #geting the reciever name
         receiver  = Wallet.objects.get(user = reciever)
