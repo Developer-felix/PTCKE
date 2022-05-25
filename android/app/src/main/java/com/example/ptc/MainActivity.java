@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mywebView=(WebView) findViewById(R.id.webview);
         mywebView.setWebViewClient(new WebViewClient());
-        mywebView.loadUrl("https://earnest-pony-14d25d.netlify.app/");
+        mywebView.loadUrl("https://tranquil-stream-15304.herokuapp.com/");
         WebSettings webSettings=mywebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
     }
