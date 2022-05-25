@@ -66,7 +66,7 @@
                                     </figure>
                                 </div>
                                 <div class="col px-0 align-self-center">
-                                    <p class="mb-1">Maxartkiller</p>
+                                    <p class="mb-1">{{user.user_name}}</p>
                                     <p class="text-muted size-12">New York City, US</p>
                                 </div>
                                 <div class="col-auto">
@@ -101,7 +101,7 @@
                 <div class="col-12">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">
+                            <a class="nav-link active" aria-current="page" href="">
                                 <div class="avatar avatar-40 rounded icon"><i class="bi bi-house-door"></i></div>
                                 <div class="col">Dashboard</div>
                                 <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -117,12 +117,12 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item nav-link" href="profile.html">
+                                <li><a class="dropdown-item nav-link" href="">
                                         <div class="avatar avatar-40 rounded icon"><i class="bi bi-calendar2"></i></div>
                                         <div class="col">Profile</div>
                                         <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                                     </a></li>
-                                <li><a class="dropdown-item nav-link" href="settings.html">
+                                <li><a class="dropdown-item nav-link" href="">
                                         <div class="avatar avatar-40 rounded icon"><i class="bi bi-calendar-check"></i>
                                         </div>
                                         <div class="col">Settings</div>
@@ -131,7 +131,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="chat.html" tabindex="-1">
+                            <a class="nav-link" href="" tabindex="-1">
                                 <div class="avatar avatar-40 rounded icon"><i class="bi bi-chat-text"></i></div>
                                 <div class="col">Messages</div>
                                 <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -139,7 +139,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="notifications.html" tabindex="-1">
+                            <a class="nav-link" href="" tabindex="-1">
                                 <div class="avatar avatar-40 rounded icon"><i class="bi bi-bell"></i></div>
                                 <div class="col">Notification</div>
                                 <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -154,21 +154,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="style.html" tabindex="-1">
-                                <div class="avatar avatar-40 rounded icon"><i class="bi bi-palette"></i></div>
-                                <div class="col">Style <i class="bi bi-star-fill text-warning small"></i></div>
-                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages.html" tabindex="-1">
-                                <div class="avatar avatar-40 rounded icon"><i class="bi bi-file-earmark-text"></i></div>
-                                <div class="col">Pages <span class="badge bg-info fw-light">new</span></div>
-                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                            </a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'users:logout' %}" tabindex="-1">
                                 <div class="avatar avatar-40 rounded icon"><i class="bi bi-box-arrow-right"></i></div>
@@ -196,7 +182,7 @@
                 </div>
                 <div class="col align-self-center text-center">
                     <div class="logo-small">
-                        <img src="assets/img/logo.png" alt="">
+                        <img src="{% static 'assets/img/logo.png' %}" alt="">
                         <h5>PTC Manager</h5>
                     </div>
                 </div>
@@ -239,7 +225,7 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="small mb-1"><a href="profile.html" class="fw-medium">Shelvey</a> <span
+                                    <p class="small mb-1"><a href="" class="fw-medium">Shelvey</a> <span
                                             class="text-muted">requested money</span></p>
                                     <p>150 <span class="text-muted">$</span> <small class="text-muted">1 min ago</small>
                                     </p>
@@ -319,7 +305,7 @@
                                 <a href="{% url 'users:ptc_child_top_up' child.id%}" class="card text-center">
                                     <div class="card-body">
                                         <figure class="avatar avatar-50 shadow-sm mb-1 rounded-10">
-                                            <img src="{% static 'assets/img/user2.jpg' %}" alt="">
+                                            <img src="http://localhost:8000/media/{{ child.avatar }}" alt="">
                                         </figure>
                                         <p class="text-color-theme size-12 small">{{child.user_name}}</p>
                                     </div>
@@ -471,7 +457,7 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow rounded-10 ">
-                                        <img src="{% static 'assets/img/user2.jpg'%}" alt="">
+                                        <img src="http://localhost:8000/media/{{ transaction.reciever.avatar }}" alt="">
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
@@ -503,7 +489,7 @@
         <div class="container">
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">
+                    <a class="nav-link active" href="{% url 'users:ptc_parent_dashboard' %}">
                         <span>
                             <i class="nav-icon bi bi-house"></i>
                             <span class="nav-text">Home</span>
@@ -511,7 +497,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="stats.html">
+                    <a class="nav-link" href="">
                         <span>
                             <i class="nav-icon bi bi-laptop"></i>
                             <span class="nav-text">Statistics</span>
@@ -532,24 +518,24 @@
                             </a>
 
                             <button type="button" class="btn btn-lg btn-icon-text"
-                                onclick="window.location.replace('sendmoney.html');">
+                                >
                                 <i class="bi bi-arrow-up-right-circle size-32"></i><span>Send</span>
                             </button>
 
                             <button type="button" class="btn btn-lg btn-icon-text"
-                                onclick="window.location.replace('bills.html');">
+                                >
                                 <i class="bi bi-receipt size-32"></i><span>Bills</span>
                             </button>
 
                             <button type="button" class="btn btn-lg btn-icon-text"
-                                onclick="window.location.replace('receivemoney.html');">
+                                >
                                 <i class="bi bi-arrow-down-left-circle size-32"></i><span>Receive</span>
                             </button>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="rewards.html">
+                    <a class="nav-link" href="">
                         <span>
                             <i class="nav-icon bi bi-gift"></i>
                             <span class="nav-text">Rewards</span>
@@ -557,7 +543,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="wallet.html">
+                    <a class="nav-link" href="">
                         <span>
                             <i class="nav-icon bi bi-wallet2"></i>
                             <span class="nav-text">Wallet</span>

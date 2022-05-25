@@ -53,6 +53,7 @@
 #         pass
     
 
+from email.policy import default
 import uuid
 from django.db import models
 from django.dispatch import receiver
@@ -101,6 +102,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=255,null=True,blank=True)
     second_name = models.CharField(max_length=255,null=True,blank=True)
     phone_number = models.CharField(max_length=255,null=True,blank=True,unique=True)
+    avatar = models.ImageField(_("Avatar"), upload_to="user", blank=True, null=True,default="profile.jpg")
     email = models.CharField(max_length=255,null=True,blank=True)
     otp = models.ForeignKey("otp.Otps", blank=True,
                              null=True, on_delete=models.CASCADE)

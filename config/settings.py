@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'ussd',
     'wallet',
     'otp',
+    'images',
+    'chats',
+    'notification',
     "corsheaders",
     "rest_framework",
 ]
@@ -150,5 +153,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL="users.Account"
+
+
 
 # LOGOUT_REDIRECT_URL = '/login'
