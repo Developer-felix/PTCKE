@@ -1,0 +1,38 @@
+.logo-splash {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+
+    img {
+        width: 100px;
+        margin-bottom: 15px;
+        border-radius: var(--fimobile-rounded);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.logo-small {
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    line-height: 44px;
+
+    img {
+        width: 32px;
+        margin: 0;
+        border-radius: calc(var(--fimobile-rounded) - 10px);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+        margin-right: 8px;
+        border: 0;
+        vertical-align: middle;
+    }
+
+    h5 {
+        display: inline-block;
+        margin: 0 auto;
+        vertical-align: middle;
+    }
+}

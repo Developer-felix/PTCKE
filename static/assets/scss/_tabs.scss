@@ -1,0 +1,20 @@
+.tabs {
+    background-color: var(--fimobile-theme-bordercolor);
+    border-radius: var(--fimobile-rounded);
+    padding: 5px;
+    
+    .nav-item {
+        & > .nav-link {
+            color: var(--fimobile-theme-color);
+            padding: calc(var(--fimobile-padding) - 5px) var(--fimobile-padding);
+            line-height: 30px;
+            border-radius: calc(var(--fimobile-rounded) - 5px);
+            text-transform: uppercase;
+
+            &.active {
+                color: var(--fimobile-theme-text);
+                background-color: var(--fimobile-theme-color);
+            }
+        }
+    }
+}

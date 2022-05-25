@@ -1,0 +1,314 @@
+.dark-mode {
+    .alert-danger,
+    .card.alert-danger,
+    .bg-danger-light {
+        background-color: rgba($red, 0.35);
+    }
+    .alert-info,
+    .card.alert-info,
+    .bg-info-light {
+        background-color: rgba($teal, 0.35);
+    }
+    .alert-primary,
+    .card.alert-primary,
+    .bg-primary-light {
+        background-color: rgba($blue, 0.35);
+    }
+    .alert-warning,
+    .card.alert-warning,
+    .bg-warning-light {
+        background-color: rgba($yellow, 0.35);
+    }
+    .alert-success,
+    .card.alert-success,
+    .bg-success-light {
+        background-color: rgba($green, 0.35);
+    }
+    .alert-theme,
+    .card.alert-theme,
+    .bg-theme-light {
+        background-color: var(--fimobile-theme-color-light);
+    }
+
+    --fimobile-sidebar: var(--fimobile-theme-color);
+    --fimobile-sidebar-text: #ffffff;
+    --fimobile-sidebar-text-active: #ffffff;
+    --fimobile-card-color: rgba(255, 255, 255, 0.10);
+    --fimobile-card-text: #ffffff;
+    --fimobile-input-color: rgba(0, 0, 0, 0.25);
+    --fimobile-input-bordercolor: rgba(255, 255, 255, 0.1);
+    --fimobile-input-text: #ffffff;
+
+    --fimobile-theme-color: #0a298d;
+    --fimobile-theme-color-light: rgba(10, 41, 141, 0.5);
+    --fimobile-theme-bordercolor: #041344;
+    --fimobile-theme-text: #ffffff;
+    --fimobile-theme-modal: #0b2783;
+    --fimobile-header: transparent;
+    --fimobile-header-active: #03175a;
+    --fimobile-header-text: #ffffff;
+    --fimobile-footer: #03175a;
+    --fimobile-footer-text: #6683e0;
+    --fimobile-footer-text-active: var(--fimobile-theme-text);
+    --fimobile-page-bg-1: #001149;
+    --fimobile-page-bg-2: #000000;
+    --fimobile-page-text: #000000;
+    --fimobile-page-link: var(--fimobile-theme-color);
+
+    .theme-indigo {
+        --fimobile-theme-color: darken($indigo, 32%);
+        --fimobile-theme-color-light: darken($indigo, 30%);
+        --fimobile-theme-bordercolor: darken($indigo, 40%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($indigo, 30%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($indigo, 26%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($indigo, 26%);
+        --fimobile-footer-text: lighten($indigo, 25%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($indigo, 35%);
+        --fimobile-page-bg-2: darken($indigo, 50%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+    .theme-purple {
+        --fimobile-theme-color: darken($purple, 32%);
+        --fimobile-theme-color-light: darken($purple, 30%);
+        --fimobile-theme-bordercolor: darken($purple, 40%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($purple, 30%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($purple, 26%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($purple, 26%);
+        --fimobile-footer-text: lighten($purple, 25%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($purple, 35%);
+        --fimobile-page-bg-2: darken($purple, 50%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+
+    .theme-pink {
+        --fimobile-theme-color: darken($pink, 32%);
+        --fimobile-theme-color-light: darken($pink, 30%);
+        --fimobile-theme-bordercolor: darken($pink, 40%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($pink, 30%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($pink, 26%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($pink, 26%);
+        --fimobile-footer-text: lighten($pink, 25%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($pink, 35%);
+        --fimobile-page-bg-2: darken($pink, 50%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+
+    .theme-red {
+        --fimobile-theme-color: darken($red, 38%);
+        --fimobile-theme-color-light: darken($red, 36%);
+        --fimobile-theme-bordercolor: darken($red, 46%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($red, 36%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($red, 32%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($red, 32%);
+        --fimobile-footer-text: lighten($red, 20%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($red, 42%);
+        --fimobile-page-bg-2: darken($red, 60%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+
+    .theme-orange {
+        --fimobile-theme-color: darken($orange, 38%);
+        --fimobile-theme-color-light: darken($orange, 36%);
+        --fimobile-theme-bordercolor: darken($orange, 44%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($orange, 36%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($orange, 32%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($orange, 32%);
+        --fimobile-footer-text: lighten($orange, 20%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($orange, 42%);
+        --fimobile-page-bg-2: darken($orange, 60%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+
+    .theme-yellow {
+        --fimobile-theme-color: darken($yellow, 40%);
+        --fimobile-theme-color-light: darken($yellow, 36%);
+        --fimobile-theme-bordercolor: darken($yellow, 46%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($yellow, 36%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($yellow, 32%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($yellow, 32%);
+        --fimobile-footer-text: lighten($yellow, 20%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($yellow, 42%);
+        --fimobile-page-bg-2: darken($yellow, 60%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+
+    .theme-green {
+        --fimobile-theme-color: darken($green, 32%);
+        --fimobile-theme-color-light: darken($green, 30%);
+        --fimobile-theme-bordercolor: darken($green, 40%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($green, 30%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($green, 26%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($green, 26%);
+        --fimobile-footer-text: lighten($green, 25%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($green, 35%);
+        --fimobile-page-bg-2: darken($green, 50%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+
+    .theme-teal {
+        --fimobile-theme-color: darken($teal, 26%);
+        --fimobile-theme-color-light: darken($teal, 20%);
+        --fimobile-theme-bordercolor: darken($teal, 30%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($teal, 26%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($teal, 26%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($teal, 26%);
+        --fimobile-footer-text: lighten($teal, 10%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($teal, 28%);
+        --fimobile-page-bg-2: darken($teal, 50%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+
+    .theme-cyan {
+        --fimobile-theme-color: darken($cyan, 32%);
+        --fimobile-theme-color-light: darken($cyan, 30%);
+        --fimobile-theme-bordercolor: darken($cyan, 40%);
+        --fimobile-theme-text: #ffffff;
+        --fimobile-theme-modal: darken($cyan, 30%);
+        --fimobile-header: transparent;
+        --fimobile-header-active: darken($cyan, 26%);
+        --fimobile-header-text: var(--fimobile-theme-text);
+        --fimobile-footer: darken($cyan, 26%);
+        --fimobile-footer-text: lighten($cyan, 25%);
+        --fimobile-footer-text-active: var(--fimobile-theme-text);
+        --fimobile-page-bg-1: darken($cyan, 35%);
+        --fimobile-page-bg-2: darken($cyan, 50%);
+        --fimobile-page-link: var(--fimobile-theme-color);
+    }
+
+    body,
+    .btn {
+        color: var(--fimobile-theme-text);
+    }
+    .text-color-theme {
+        --fimobile-theme-color: #ffffff;
+    }
+    a:not(.btn):not(.list-group-item) {
+        --fimobile-theme-color: #638ef1;
+        &:focus,
+        &:hover,
+        &:active {
+            color: #ffffff;
+        }
+    }
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            background-color: var(--fimobile-theme-text);
+        }
+    }
+    .tabs .nav-item > .nav-link:not(.active) {
+        --fimobile-theme-color: var(--fimobile-theme-text);
+    }
+    .chartdoughnut > .datadisplay {
+        --fimobile-theme-text: var(--fimobile-theme-color);
+    }
+    .btn-light {
+        background-color: var(--fimobile-page-bg-2);
+        color: var(--fimobile-theme-text);
+        border-color: var(--fimobile-page-bg-2);
+    }
+    .bg-light {
+        background-color: var(--fimobile-card-color) !important;
+    }
+
+    .btn-default:disabled {
+        color: var(--fimobile-theme-text);
+    }
+
+    .card {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07), inset 0 1px 0px rgba(255, 255, 255, 0.1);
+        -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07), inset 0 1px 0px rgba(255, 255, 255, 0.1);
+        -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07), inset 0 1px 0px rgba(255, 255, 255, 0.1);
+    }
+    .accordion-item {
+        background-color: transparent;
+        .accordion-header {
+            .accordion-button.collapsed {
+                background-color: transparent;
+                color: var(--fimobile-theme-text);
+            }
+        }
+        .accordion-collapse.show {
+            background-color: var(--fimobile-card-color);
+        }
+    }
+    .list-group-item {
+        color: var(--fimobile-theme-text);
+    }
+    .bg-white {
+        background-color: var(--fimobile-theme-color) !important;
+    }
+    .toast {
+        background-color: var(--fimobile-theme-modal);
+        .toast-header {
+            background-color: var(--fimobile-card-color);
+            color: var(--fimobile-card-text);
+        }
+    }
+    .modal-content {
+        background-color: var(--fimobile-theme-modal);
+        .modal-header {
+            border-color: var(--fimobile-theme-bordercolor);
+        }
+    }
+    .form-control,
+    input,
+    .dark-bg .form-control,
+    .dark-bg label {
+        color: var(--fimobile-input-text);
+    }
+    .form-control {
+        background-color: var(--fimobile-input-color);
+        border-color: var(--fimobile-input-bordercolor);
+    }
+    .chat-list .left-chat .chat-block {
+        --fimobile-theme-text: var(--fimobile-page-text);
+    }
+
+    .daterange-center.daterangepicker {
+        background-color: var(--fimobile-page-bg-2);
+        .calendar-table .next span,
+        .calendar-table .prev span {
+            border-color: var(--fimobile-theme-text);
+        }
+        td {
+            &.off {
+                background-color: var(--fimobile-card-color) !important;
+            }
+            &.in-range {
+                color: var(--fimobile-theme-text);
+            }
+        }
+    }
+}

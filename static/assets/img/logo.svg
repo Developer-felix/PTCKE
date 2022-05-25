@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="145" height="145" viewBox="0 0 145 145">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 80px;
+        font-family: Nunito-Bold, Nunito;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        filter: url(#Rectangle_2);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="0.306" cy="0.237" r="0.921" gradientTransform="matrix(0.681, 0.732, -0.732, 0.681, 0.271, -0.149)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffc917"/>
+      <stop offset="0.732" stop-color="#fe5f19"/>
+      <stop offset="1" stop-color="#bc0d00"/>
+    </radialGradient>
+    <filter id="Rectangle_2" x="0" y="0" width="145" height="145" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="logo" transform="translate(13.5 16.5)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, -13.5, -16.5)">
+      <rect id="Rectangle_2-2" data-name="Rectangle 2" class="cls-1" width="100" height="100" rx="20" transform="translate(22.5 17.5)"/>
+    </g>
+    <text id="Fi" class="cls-2" transform="translate(24 81)"><tspan x="0" y="0">PTC</tspan></text>
+  </g>
+</svg>
