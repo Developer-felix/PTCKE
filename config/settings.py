@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'notification',
     "corsheaders",
     "rest_framework",
+    "phonenumbers"
 ]
 
 MIDDLEWARE = [
