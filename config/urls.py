@@ -4,8 +4,11 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from ussd.views import ussd_callback
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("ussd_callback/",ussd_callback,name="get-ussd_callback"),
     path('',include('users.urls')),
 ]
 
