@@ -1,0 +1,1 @@
+{'SMSMessageData': {'Message': 'Sent to 1/1 Total Cost: KES 1.6000', 'Recipients': [{'cost': 'KES 1.6000', 'messageId': 'ATXid_ab2b4cca91ad6b1b53ab113c4e149a36', 'messageParts': 2, 'number': '+254717713920', 'status': 'Success', 'statusCode': 101}]}}

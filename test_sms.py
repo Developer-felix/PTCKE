@@ -2,8 +2,8 @@
 import africastalking
 
 # Initialize SDK
-username = "sandbox"    # use 'sandbox' for development in the test environment
-api_key = "6e5801a97796f3718a57ab5dec8089a1f30b8da78d10fb694912f7cbfecfcb14"      # use your sandbox app API key for development in the test environment
+username = "gasspoint"    # use 'sandbox' for development in the test environment
+api_key = "a11bc7cad147f2b7483347623541a9f2d344ea6d32fc29cc37db05dd15a04d64"      # use your sandbox app API key for development in the test environment
 africastalking.initialize(username, api_key)
 
 # Initialize a service e.g. SMS

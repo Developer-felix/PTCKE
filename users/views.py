@@ -1,9 +1,12 @@
-import datetime
+from datetime import datetime
+import os
 from pyexpat.errors import messages
 from django import forms
+from django.conf import settings
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from config.africastalkings import child_password_and_phone_number_send_to_phone
 from transaction.models import Transaction
 from pytz import utc
 from otp.models import Otps
@@ -273,8 +276,27 @@ def add_child(request):
         child.country = country
         child.user_type = 2
         child.save()
-        # Account.objects.filter(phone_number=phone).update(parent=parent)
-        #Send Message for app  password and
+        response = child_password_and_phone_number_send_to_phone(
+            phone=phone,
+            password=pin,
+            name=username
+        )
+        print(response)
+        try:
+            f = open(settings.MEDIA_ROOT + f"/africastalking/sms_consoles/{datetime.datetime.now().strftime('%Y-%m-%d')}.txt", "a+")
+            f.write(f"{datetime.datetime.now()} - {response}\n")
+            f.close()
+        except Exception as e:
+            try:
+                os.mkdir(os.path.join(settings.MEDIA_ROOT, 'africastalking/'))
+            except Exception as e:
+                try:
+                   os.mkdir(os.path.join(settings.MEDIA_ROOT, 'africastalking/sms_consoles/'))
+                except:
+                    pass
+            f = open(settings.MEDIA_ROOT + f"/africastalking/sms_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
+        f.write(str(response) + "\n")
+    
         print("Saved Child")
 
     return render(request,'parent/add_child.html')
