@@ -16,15 +16,21 @@ from .models import LNMOnline
 
 @api_view(["POST"])
 def LNMCallbackUrlView(request):
+    print(request.data)
     try:
         f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
     except Exception as e:
         try:
             os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/'))
         except Exception as e:
-            os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/mmpesa_consoles/'))
+            try:
+                os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/mmpesa_consoles/'))
+            except:
+                pass
         f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
     f.write(str(request.data) + "\n")
+
+    print(request.data)
     
     if request.method == "POST":
         merchant_request_id = request.data['Body']['stkCallback']['MerchantRequestID']
@@ -53,6 +59,8 @@ def LNMCallbackUrlView(request):
                 PhoneNumber = phone_number
             )
             lnmonline.save()
+            print("Saved to database")
+
         
         except:
             return Response({"success": False,
