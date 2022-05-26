@@ -1,10 +1,10 @@
 from datetime import datetime
 from django.shortcuts import redirect, render
-from config.PTC_MPESA.lipa_na_mpesa_online import lipa_na_mpesa
 from config.africastalkings import send_transaction_message_response_to_reciever_phone, send_transaction_message_response_to_sender_phone
 from transaction.models import Transaction
 from transaction.transaction_id import generate_transaction_code_id
 from users.models import Account
+from wallet.PTC_MPESA.lipa_na_mpesa_online import lipa_na_mpesa
 # from config.PTC_MPESA.lipa_na_mpesa_online import lipa_na_mpesa
 
 from wallet.models import Wallet
