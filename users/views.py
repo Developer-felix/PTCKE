@@ -23,6 +23,10 @@ from django.urls import reverse
 from wallet.models import Wallet
 
 
+def error_404_view(request, exception):
+    return render(request,'404.html')
+
+
 users = [
     {
         "phone" : "25417713943",

@@ -23,3 +23,5 @@ urlpatterns = [
     path('lnm/', LNMCallbackUrlView,name="LNMCallbackUrlView"),
 
 ]
+
+handler404 = 'users.views.error_404_view'

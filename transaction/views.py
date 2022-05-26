@@ -31,9 +31,7 @@ def LNMCallbackUrlView(request):
     # # f.write(str(request.data) + "\n")
 
     print(request.data)
-    lnm = LNMOnline.objects.all()
-    for l in lnm:
-        print(l.Amount)
+    
     
     if request.method == "POST":
         merchant_request_id = request.data['Body']['stkCallback']['MerchantRequestID']
