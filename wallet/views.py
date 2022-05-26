@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.shortcuts import redirect, render
+from config.PTC_MPESA.lipa_na_mpesa_online import lipa_na_mpesa
 from config.africastalkings import send_transaction_message_response_to_reciever_phone, send_transaction_message_response_to_sender_phone
 from transaction.models import Transaction
 from transaction.transaction_id import generate_transaction_code_id
@@ -15,6 +16,9 @@ def top_up(request):
         phone = request.POST.get("phone")
 
         # lipa_na_mpesa(phone_number=254713303092,ammount="1")
+        
+        lipa_na_mpesa(phone_number=phone,ammount=ammount)
+        
 
         print(ammount)
         def get_wallet_balance():
@@ -124,15 +128,15 @@ def transfer_cash(request,reciever_id):
             Wallet.objects.filter(user=reciever_id).update(account_balance=receiver_balance)
             transaction_id=generate_transaction_code_id()
 
-            transaction = Transaction(
-                sender=Account.objects.filter(id=sender_id),
-                transaction_id=transaction_id,
-                reciever = Account.objects.filter(id=reciever_id),
-                user = Account.objects.filter(id=sender_id),
-                ammount = ammount,
-                )
-            transaction.save()
-            send_transaction_message_response_to_reciever_phone(
+            # transaction = Transaction(
+            #     sender=Account.objects.filter(id=sender_id),
+            #     transaction_id=transaction_id,
+            #     reciever = Account.objects.filter(id=reciever_id),
+            #     user = Account.objects.filter(id=sender_id),
+            #     ammount = ammount,
+            #     )
+            # transaction.save()
+            respone = send_transaction_message_response_to_reciever_phone(
             transaction_id = transaction_id,
             phone_number= receiver_phone_number,
             sender_name = sender_name_c,
@@ -142,6 +146,7 @@ def transfer_cash(request,reciever_id):
             time = datetime.now().strftime('%Y%m%d'),
             balance = receiver_balance,
             )
+            print(respone)
             send_transaction_message_response_to_sender_phone(
                   transaction_id = transaction_id,
                   phone_number = sender_phone_number,
