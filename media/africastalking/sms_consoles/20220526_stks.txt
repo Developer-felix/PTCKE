@@ -1,1 +1,4 @@
 {'SMSMessageData': {'Message': 'Sent to 1/1 Total Cost: KES 1.6000', 'Recipients': [{'cost': 'KES 1.6000', 'messageId': 'ATXid_ab2b4cca91ad6b1b53ab113c4e149a36', 'messageParts': 2, 'number': '+254717713920', 'status': 'Success', 'statusCode': 101}]}}
+{'SMSMessageData': {'Message': 'Sent to 0/1 Total Cost: 0', 'Recipients': [{'cost': '0', 'messageId': 'None', 'number': '+254798119889', 'status': 'InsufficientBalance', 'statusCode': 405}]}}
+{'SMSMessageData': {'Message': 'Sent to 0/1 Total Cost: 0', 'Recipients': [{'cost': '0', 'messageId': 'None', 'number': '+254717713930', 'status': 'InsufficientBalance', 'statusCode': 405}]}}
+{'SMSMessageData': {'Message': 'Sent to 0/1 Total Cost: 0', 'Recipients': [{'cost': '0', 'messageId': 'None', 'number': '+254717713943', 'status': 'InsufficientBalance', 'statusCode': 405}]}}

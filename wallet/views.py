@@ -1,4 +1,6 @@
+from datetime import datetime
 from django.shortcuts import redirect, render
+from config.africastalkings import send_transaction_message_response_to_reciever_phone, send_transaction_message_response_to_sender_phone
 from transaction.models import Transaction
 from transaction.transaction_id import generate_transaction_code_id
 from users.models import Account
@@ -121,6 +123,7 @@ def transfer_cash(request,reciever_id):
             #Update reciever Query
             Wallet.objects.filter(user=reciever_id).update(account_balance=receiver_balance)
             transaction_id=generate_transaction_code_id()
+
             transaction = Transaction(
                 sender=Account.objects.filter(id=sender_id),
                 transaction_id=transaction_id,
@@ -129,6 +132,25 @@ def transfer_cash(request,reciever_id):
                 ammount = ammount,
                 )
             transaction.save()
+            send_transaction_message_response_to_reciever_phone(
+            transaction_id = transaction_id,
+            phone_number= receiver_phone_number,
+            sender_name = sender_name_c,
+            reciever_name = receiver_name_c,
+            amount = ammount,
+            date = datetime.now().strftime('%Y%m%d'),
+            time = datetime.now().strftime('%Y%m%d'),
+            balance = receiver_balance,
+            )
+            send_transaction_message_response_to_sender_phone(
+                  transaction_id = transaction_id,
+                  phone_number = sender_phone_number,
+                  sender_name = sender_name_c,
+                  reciever_name = receiver_name_c,
+                  amount = ammount,
+                  date = datetime.now().strftime('%Y%m%d'),
+                  time = datetime.now().strftime('%Y%m%d'),
+                  balance = sender_balance,)
             print("Done")
     data = {
         "balance" : get_balance(),
