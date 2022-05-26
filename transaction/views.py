@@ -1,3 +1,5 @@
+import os
+from django.conf import settings
 from django.shortcuts import render
 from django.db import models
 from django_daraja.mpesa.core import MpesaClient
@@ -14,6 +16,16 @@ from .models import LNMOnline
 
 @api_view(["POST"])
 def LNMCallbackUrlView(request):
+    try:
+        f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
+    except Exception as e:
+        try:
+            os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/'))
+        except Exception as e:
+            os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/mmpesa_consoles/'))
+        f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
+    f.write(str(request.data) + "\n")
+    
     if request.method == "POST":
         merchant_request_id = request.data['Body']['stkCallback']['MerchantRequestID']
         checkout_request_id = request.data['Body']['stkCallback']['CheckoutRequestID']
