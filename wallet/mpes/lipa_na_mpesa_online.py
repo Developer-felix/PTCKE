@@ -35,12 +35,11 @@ def lipa_na_mpesa(phone_number,ammount):
                 "PartyA": keys.phone_number,
                 "PartyB": keys.businessshortCode,
                 "PhoneNumber": phone_number,
-                "CallBackURL": "https://tranquil-stream-15304.herokuapp.com/ussd_callback/",
+                "CallBackURL": "https://tranquil-stream-15304.herokuapp.com/mpesa_callback",
                 "AccountReference": "PTC Manager",
                 "TransactionDesc": "Sending money to ptc Account"
             }
     response = requests.post(api_url,json=request,headers=headers)
-    print(response.text)
 
 lipa_na_mpesa(phone_number="254717713943",ammount="1")
 

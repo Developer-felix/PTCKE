@@ -16,21 +16,21 @@ from .models import LNMOnline
 
 @api_view(["POST"])
 def LNMCallbackUrlView(request):
-    print(request.data)
-    # try:
-    #     f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
-    # except Exception as e:
-    #     try:
-    #         os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/'))
-    #     except Exception as e:
-    #         try:
-    #             os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/mmpesa_consoles/'))
-    #         except:
-    #             pass
-    #     f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
-    # f.write(str(request.data) + "\n")
+    # print(request.data)
+    # # try:
+    # #     f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
+    # # except Exception as e:
+    # #     try:
+    # #         os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/'))
+    # #     except Exception as e:
+    # #         try:
+    # #             os.mkdir(os.path.join(settings.MEDIA_ROOT, 'mpesa/mmpesa_consoles/'))
+    # #         except:
+    # #             pass
+    # #     f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
+    # # f.write(str(request.data) + "\n")
 
-    print(request.data)
+    # print(request.data)
     lnm = LNMOnline.objects.all()
     for l in lnm:
         print(l.Amount)
