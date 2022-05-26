@@ -30,7 +30,7 @@ def LNMCallbackUrlView(request):
     # #     f = open(settings.MEDIA_ROOT + f"/mpesa/mmpesa_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
     # # f.write(str(request.data) + "\n")
 
-    # print(request.data)
+    print(request.data)
     lnm = LNMOnline.objects.all()
     for l in lnm:
         print(l.Amount)
