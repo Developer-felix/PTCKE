@@ -122,10 +122,10 @@ def transfer_cash(request,reciever_id):
             Wallet.objects.filter(user=reciever_id).update(account_balance=receiver_balance)
             transaction_id=generate_transaction_code_id()
             transaction = Transaction(
-                sender=Account.objects.get(id=sender_id),
+                sender=Account.objects.filter(id=sender_id),
                 transaction_id=transaction_id,
-                reciever = Account.objects.get(id=reciever_id),
-                user = Account.objects.get(id=sender_id),
+                reciever = Account.objects.filter(id=reciever_id),
+                user = Account.objects.filter(id=sender_id),
                 ammount = ammount,
                 )
             transaction.save()
