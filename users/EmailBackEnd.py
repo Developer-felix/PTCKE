@@ -10,8 +10,10 @@ class EmailBackEnd(ModelBackend):
         try:
             user = UserModel.objects.filter( phone_number=phone_number)
         
-            if user.check_password(password):
-                return user
+            if user.exists():
+                user = user.first()
+                if check_password(password, user.password):
+                    return user
         
         except UserModel.DoesNotExist:
             return None

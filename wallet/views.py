@@ -70,6 +70,9 @@ def transfer_cash(request,reciever_id):
             if b.user_id == reciever_id:
                 balance = b.account_balance
                 return balance
+    if request.method == 'DELETE':
+        response = Account.objects.filter(id=reciever_id).delete()
+        return respone
     if request.method == 'POST':
         #Get post data from the sender 
         sender_id = request.user.id

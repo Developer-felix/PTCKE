@@ -58,7 +58,8 @@ def child_password_and_phone_number_send_to_phone(
     return sms.send("Hello "+name+ ", Your password is "+str(password)+". Welcome to PTC app, to install click https://github.com/Developer-Felix/ForthYeahFinalProject/blob/main/APK/ptc_manager.apk view then install. Thank You",[phone])
 
             
-
+def send_otp_to_validate_phone(phone,otp):
+    return sms.send("Your OTP is ",[phone])
 
 
 # try:

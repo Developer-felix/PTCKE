@@ -49,8 +49,7 @@
         </div>
     </div>
     <!-- loader section ends -->
-     <form action="" method="post">
-         {% csrf_token %}
+     
     <!-- Begin page -->
     <main class="h-100">
 
@@ -76,7 +75,8 @@
             </div>
         </header>
         <!-- Header ends -->
-
+        <form action="" method="post">
+            {% csrf_token %}
         <!-- main page content -->
         <div class="main-container container">
             <!-- selected contacts -->
@@ -91,7 +91,7 @@
                     <p class="text-muted size-12">{{user.phone_number}}</p>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-default btn-44 shadow-sm">
+                    <button class="btn btn-default btn-44 shadow-sm red">
                         <i class="bi bi-person-badge"></i> 
                     </button>
                 </div>

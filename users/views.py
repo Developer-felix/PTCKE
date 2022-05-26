@@ -1,4 +1,5 @@
 from datetime import datetime
+import email
 import os
 from pyexpat.errors import messages
 from django import forms
@@ -6,7 +7,7 @@ from django.conf import settings
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from config.africastalkings import child_password_and_phone_number_send_to_phone
+from config.africastalkings import child_password_and_phone_number_send_to_phone, send_otp_to_validate_phone
 from transaction.models import Transaction
 from pytz import utc
 from otp.models import Otps
@@ -26,39 +27,13 @@ from wallet.models import Wallet
 def error_404_view(request, exception):
     return render(request,'404.html')
 
+def delete_child(request, id):
+  member = Account.objects.get(id=id)
+  member.delete()
+  return redirect('users:ptc_parent_dashboard')
 
-users = [
-    {
-        "phone" : "25417713943",
-        "pin" : "1234"
-        "role" "1"
-    },
-    {
-        "phone" : "25417713943",
-        "pin" : "1234"
-        "role" "1"
-    },
-    {
-        "phone" : "25417713943",
-        "pin" : "1234"
-        "role" "1"
-    },
-    {
-        "phone" : "25417713943",
-        "pin" : "1234"
-        "role" "1"
-    },
-    {
-        "phone" : "25417713943",
-        "pin" : "1234"
-        "role" "1"
-    },
-    {
-        "phone" : "25417713943",
-        "pin" : "1234"
-        "role" "1"
-    },
-]
+
+
 
 def splash(request):
     return render(request,'splash.html')
@@ -130,6 +105,9 @@ from django.shortcuts import render, redirect
 
 from django.contrib.auth.hashers import make_password, check_password
 
+
+
+
 def register(request):
     data = {}
     if request.method == "POST":
@@ -137,6 +115,21 @@ def register(request):
         phone = request.POST.get('phone')
         country = request.POST.get('country')
         pin = request.POST.get('pin')
+
+        users = Account.objects.all()
+        for user in users:
+            if user.phone_number == phone:
+                return redirect("")
+
+        #Check if the user already exists
+        # user = Account.objects.all()
+        # for user in user:
+        #     if user.phone_number == phone:
+        #         return redirect('users:ptc-login')
+        #     else:
+        #         return redirect('users:ptc-register')
+        
+        
 
         # pin = make_password('pin')
         # print(pin)
@@ -151,16 +144,39 @@ def register(request):
         #     )
         # parent.save()
 
-        # try:
-        
-        parent = Account.objects.create_user(
-                phone_number = phone,
-                user_name = username,
-                password=pin,
-                is_parent = True
+        #     create a custom user with the phone number as the username and email backend as the password
+        parent = Account(
+            phone_number = phone,
+            user_name = username,
+            country = country,
+            password=make_password(pin),
+            email = phone + "@gmail.com"
         )
+        parent.save()
+        user = authenticate(request,username=phone,password=pin)
+        login(request,parent)
+        # except:
+        print("Error")
+
+        
+        # parent = Account.objects.create_user(
+        #         phone_number = phone,
+        #         user_name = username,
+        #         password=make_password(pin),
+        #         email = "parent@gmail.com",
+        # )
+        # login(request,parent)
+        
+
+        print("Authenticated")
+        print(make_password(pin))
+        parent.is_parent = True
         
         parent.save()
+
+        #authenticate the user to remove the error anonoymous user _meta object
+        # user = authenticate(username=phone, password=pin)
+        # login(request,user)
 
         phonenumber = phone
         otp_number = random_number_generator(size=4)
@@ -176,6 +192,10 @@ def register(request):
                     otp = otp_number
             )
             print(otp_number)
+            send_otp_to_validate_phone(
+                phone=phone,
+                otp=otp_number
+            )
             otp.save()
             print("OTP Saved Sucessfull")
 
@@ -217,7 +237,7 @@ def otp(request):
             print(otps.phone_number)
             if  str(otp) == str(otps.otp) and str(phone)==str(otps.phone_number):
                 print("test3")
-                if datetime.datetime.now().replace(tzinfo=utc) <= (otps.expire_at.replace(tzinfo=utc)):
+                if datetime.now().replace(tzinfo=utc) <= (otps.expire_at.replace(tzinfo=utc)):
                     print("test4")
                 # update validation and mark the otp was successfully validated
                     Otps.objects.filter(otp=otp).update(is_otp_authenticated=True)
