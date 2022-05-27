@@ -95,7 +95,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ptcfinall',
+        'NAME': 'ptc1',
         'USER': 'root', 
         'PASSWORD': '',
         'HOST': 'localhost',

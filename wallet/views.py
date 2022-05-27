@@ -170,6 +170,11 @@ def transfer_cash(request,reciever_id):
 def child_withdraw(request):
     if request.method == 'POST':
         ammount = request.POST.get("ammount")
+        phone = request.POST.get("phone")
+        reason = request.POST.get("reason")
+        print(ammount)
+        print(phone)
+        print(reason)
         user_id = request.user.id
         wallet = Wallet.objects.filter(user_id=user_id)
         for wallet in wallet:
@@ -177,14 +182,22 @@ def child_withdraw(request):
         if int(ammount) <= int(wallet_balance):
             updated_balance = int(wallet_balance) - int(ammount)
             Wallet.objects.filter(user_id=request.user.id).update(account_balance=updated_balance)
-            return redirect("success_withdraw/?ammount="+ammount)
+            return redirect("success/?ammount="+ammount)
         else:
             return redirect("error_withdraw/?ammount="+ammount)
     return render(request,'child/child_withdraw.html')
 
 def withdraw_success(request):
     ammount = request.GET.get("ammount")
+    def get_wallet_balance():
+            wallet = Wallet.objects.filter(user_id=request.user.id)
+            for wallet in wallet:
+                wallet_balance =  wallet.account_balance
+                return wallet_balance
+    wallet_balance=get_wallet_balance()
     data = {
-        "ammount" : ammount
+        "ammount" : ammount,
+        "wallet_balance":wallet_balance
     }
     return render(request,'child/withdraw_success.html',data)
+
