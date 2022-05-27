@@ -129,12 +129,9 @@ def register(request):
         if Account.objects.filter(phone_number=phone).exists():
             print("phone number already registered")
             messages.info(request, f"Phone number already registered")
-            return redirect('users:ptc-login')
+            return redirect('users:ptc-register')
 
-        users = Account.objects.all()
-        for user in users:
-            if user.phone_number == phone:
-                return redirect("")
+    
 
         #     create a custom user with the phone number as the username and email backend as the password
         parent = Account(
@@ -147,6 +144,7 @@ def register(request):
         parent.is_parent = True
         
         parent.save()
+        messages.info(request, f"You are now registered as {username}")
 
         user = authenticate(request,username=phone,password=pin)
         login(request,parent)
@@ -229,11 +227,10 @@ def otp(request):
                     return redirect('users:ptc_parent_dashboard')
                 else:
                     print("Fail")
-                    messages.info(request, f"OTP has expired")
+                    
 
             else:
                 print("fail2")
-                messages.info(request, f"OTP is not valid")
     return render(request,'parent/otp.html')
 
 def child_dashboard(request):
@@ -301,6 +298,7 @@ def add_child(request):
         for user in users:
             if user.phone_number == phone:
                 messages.info(request, f"Phone number already registered")
+                return redirect("users:ptc_parent_add_child")
         
         try:
             child = Account(
@@ -322,6 +320,7 @@ def add_child(request):
             response = "Error"
             messages.info(request, f"Child already exist")
             print(response)
+            return redirect("users:ptc_parent_add_child")
         print(response)
         try:
             f = open(settings.MEDIA_ROOT + f"/africastalking/sms_consoles/{datetime.datetime.now().strftime('%Y-%m-%d')}.txt", "a+")

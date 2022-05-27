@@ -1,55 +1,83 @@
-{% extends 'layouts/base.html' %}
-{% load static %}
-{% block main-content %}
+{% extends 'layouts/base.html' %} {% load static %} {% block main-content %}
 
-    <!-- Begin page content -->
-    <main class="container-fluid h-100">
-        <div class="row h-100">
-            <div class="col-12 text-center mb-auto px-0">
-                <header class="header">
-                    <div class="row">
-                        <div class="col-auto">
-                            <a href="{% url 'users:ptc-register' %} "  class="btn btn-light btn-44">
-                                <i class="bi bi-arrow-left"></i>
-                            </a>
-                        </div>
-                        <div class="col align-self-center">
-                            <h5>OTP Verification</h5>
-                        </div>
-                        <div class="col-auto">
-                            <a class="btn btn-light btn-44 invisible"></a>
-                        </div>
-                    </div>
-                </header>
-            </div>
-            <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto align-self-center text-center py-4">
-                <h1 class="mb-4 text-color-theme">Verify OTP</h1>
-                <p class="text-muted mb-4">Verify OTP sent to your provided phone number</p>
-                 <form action="" method="post">
-                     {% csrf_token %}
-                <div class="form-floating is-valid mb-3">
-                    <input type="text" name="otp" class="form-control"  placeholder="Enter OTP" id="otp">
-                    <label for="otp">   Enter OTP</label>
-                </div>
-                <button type="submit" class="btn btn-lg btn-default w-100 mb-4 shadow"
-                    >
-                    Verify
-                </button>
-            </form>
-            </div>
-            <div class="col-12 text-center mt-auto">
-                <div class="row justify-content-center footer-info">
-                    <div class="col-auto text-center">
-                        <span class="progressstimer">
-                            <img src="{% static 'assets/img/progress.png' %}" alt="">
-                            <span class="timer" id="timer"> 5:00</span>
-                        </span>
-                        <br />
-                        <p class="mb-3"><span class="text-muted">Didn't received yet?</span> <a href="">Resend OTP</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+<!-- Begin page content -->
+<main class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col-12 text-center mb-auto px-0">
+      <header class="header">
+        <div class="row">
+          <div class="col-auto">
+            <a
+              href="{% url 'users:ptc-register' %} "
+              class="btn btn-light btn-44"
+            >
+              <i class="bi bi-arrow-left"></i>
+            </a>
+          </div>
+          <div class="col align-self-center">
+            <h5>OTP Verification</h5>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-light btn-44 invisible"></a>
+          </div>
         </div>
-    </main>
-    {% endblock main-content %}
+      </header>
+    </div>
+
+    <div class="col-12 text-center mb-auto px-0">
+      <!--If there is any infor messages from the backend displlay then hidden on progess -->
+      {% if messages %} {% for message in messages %}
+      <!--Toggle allert message and dismis in seconds-->
+      <div
+        class="alert alert-{{message.tags}} alert-dismissible fade show"
+        role="alert"
+      >
+        {{message.message}}
+      </div>
+      {% endfor %} {% endif %}
+    </div>
+
+    <div
+      class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto align-self-center text-center py-4"
+    >
+      <h1 class="mb-4 text-color-theme">Verify OTP</h1>
+      <p class="text-muted mb-4">
+        Verify OTP sent to your provided phone number
+      </p>
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-floating is-valid mb-3">
+          <input
+            type="text"
+            name="otp"
+            class="form-control"
+            placeholder="Enter OTP"
+            id="otp"
+          />
+          <label for="otp"> Enter OTP</label>
+        </div>
+        <button type="submit" class="btn btn-lg btn-default w-100 mb-4 shadow">
+          Verify
+        </button>
+      </form>
+    </div>
+  <!--display progress bar and if error message to stop the progress bar-->
+  
+    <div class="col-12 text-center mt-auto">
+      <div class="row justify-content-center footer-info">
+        <div class="col-auto text-center">
+          <span class="progressstimer">
+            <img src="{% static 'assets/img/progress.png' %}" alt="" />
+            <span class="timer" id="timer"> 5:00</span>
+          </span>
+          <br />
+          <p class="mb-3">
+            <span class="text-muted">Didn't received yet?</span>
+            <a href="">Resend OTP</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock main-content %}
