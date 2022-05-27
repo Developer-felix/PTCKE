@@ -287,13 +287,13 @@ def add_child(request):
         phone = request.POST.get('phone')
         country = request.POST.get('country')
         pin = random_number_generator(size=4)
-        print("Try")
+        print(pin)
         
 
         child = Account(
                 phone_number = phone,
                 user_name = username,
-                password=pin,
+                password=make_password(pin),
         )
         child.parent = Account.objects.get(id=request.user.id)
         child.is_child = True

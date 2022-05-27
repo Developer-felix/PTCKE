@@ -114,7 +114,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     is_admin_user = models.BooleanField(default=False)
     is_super_user = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=True)
-    is_parent = models.BooleanField(default=True)
+    is_parent = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
 
