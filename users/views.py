@@ -251,6 +251,27 @@ def otp(request):
     return render(request,'parent/otp.html')
 
 def child_dashboard(request):
+    global wallet_balance
+    user_id = request.user.id 
+    user_phone = request.user.phone_number
+    transactions = Transaction.objects.filter(sender=user_id).order_by('-id')
+    
+    def balance_func():
+        wallet = Wallet.objects.filter(user_id=user_id)
+        for wallet in wallet:
+            wallet_balance = wallet.account_balance
+            # x = wallet_balance.split(',',-3)
+            print(wallet_balance)
+            return wallet_balance
+    
+    print(user_id)
+    if request.user.is_authenticated:
+        print("Loged In User as "+request.user.user_name)
+    
+    data = {
+        "balance" : balance_func(),
+        "transactions" : transactions,
+    }
     return render(request,'child/dashboard.html')
 
 def parent_dashboard(request):

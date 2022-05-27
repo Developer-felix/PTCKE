@@ -202,7 +202,7 @@
             <div class="row mb-4">
                 <div class="col-auto">
                     <div class="avatar avatar-50 shadow rounded-10">
-                        <img src="assets/img/user1.jpg" alt="">
+                        <img src="https://tranquil-stream-15304.herokuapp.com/media/{{ user.avatar }}" alt="">
                     </div>
                 </div>
                 {% if user.is_authenticated %}
@@ -221,7 +221,7 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-44 shadow-sm rounded-10">
-                                        <img src="assets/img/user3.jpg" alt="">
+                                        <img src="https://tranquil-stream-15304.herokuapp.com/media/{{ user.avatar }}" alt="">
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
@@ -288,9 +288,9 @@
 
             <!-- connection -->
             <div class="row mb-3">
-                <div class="col">
+                <!-- <div class="col">
                     <h6 class="title">Children</h6>
-                </div>
+                </div> -->
                 <div class="col-auto">
                     <a href="" class="small"></a>
                 </div>
@@ -448,7 +448,8 @@
                     <!-- <a href="" class="small">View all</a> -->
                 </div>
             </div>
-            <!-- <div class="row mb-4">
+            {% if transactions %}
+             <div class="row mb-4">
                 <div class="col-12 px-0">
                     <ul class="list-group list-group-flush bg-none">
                         {% for transaction in transactions %}
@@ -472,9 +473,15 @@
                         {% endfor %}
                     </ul>
                 </div>
-            </div> -->
+            </div>
+            {% else %}
+            <div class="row mb-4">
+                <div class="col-12 px-0">
+                    <h6 style="text-align: center;">No Transactions</h6>
+                </div>
+            </div>
+            {% endif %}
 
-           
 
         </div>
         <!-- main page content ends -->
