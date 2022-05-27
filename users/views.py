@@ -1,7 +1,7 @@
 from datetime import datetime
 import email
 import os
-from pyexpat.errors import messages
+from django.contrib import messages
 from django import forms
 from django.conf import settings
 from django.shortcuts import redirect, render
@@ -116,33 +116,25 @@ def register(request):
         country = request.POST.get('country')
         pin = request.POST.get('pin')
 
+        #if phone number starts with 07 remove the 0 and add +254
+        if phone[0] == '0':
+            phone = phone[1:]
+            phone = '+254'+phone
+        
+        #if phone number does not start with + append + 
+        elif phone[0] != '+':
+            phone = '+'+phone
+
+        #check if the phone number is already registered
+        if Account.objects.filter(phone_number=phone).exists():
+            print("phone number already registered")
+            messages.info(request, f"Phone number already registered")
+            return redirect('users:ptc-login')
+
         users = Account.objects.all()
         for user in users:
             if user.phone_number == phone:
                 return redirect("")
-
-        #Check if the user already exists
-        # user = Account.objects.all()
-        # for user in user:
-        #     if user.phone_number == phone:
-        #         return redirect('users:ptc-login')
-        #     else:
-        #         return redirect('users:ptc-register')
-        
-        
-
-        # pin = make_password('pin')
-        # print(pin)
-        
-        
-
-        # parent = Account(
-        #         phone = phone,
-        #         username = username,
-        #         country = country,
-        #         password=pin
-        #     )
-        # parent.save()
 
         #     create a custom user with the phone number as the username and email backend as the password
         parent = Account(
@@ -191,6 +183,11 @@ def register(request):
             new_otp = Otps.objects.filter(phone_number=phone).update(otp=otp_number)
             print(otp)
             print("OTP updated")
+            send_otp_to_validate_phone(
+                phone=phone,
+                otp=otp_number
+            )
+            messages.info(request, f"OTP has been sent to your phone number")
 
         return redirect('otp/?phone='+phone)
 
@@ -232,8 +229,11 @@ def otp(request):
                     return redirect('users:ptc_parent_dashboard')
                 else:
                     print("Fail")
+                    messages.info(request, f"OTP has expired")
+
             else:
                 print("fail2")
+                messages.info(request, f"OTP is not valid")
     return render(request,'parent/otp.html')
 
 def child_dashboard(request):
@@ -295,23 +295,33 @@ def add_child(request):
         country = request.POST.get('country')
         pin = random_number_generator(size=4)
         print(pin)
-        
 
-        child = Account(
+        # Check if the phone number is already registered
+        users = Account.objects.all()
+        for user in users:
+            if user.phone_number == phone:
+                messages.info(request, f"Phone number already registered")
+        
+        try:
+            child = Account(
                 phone_number = phone,
                 user_name = username,
                 password=make_password(pin),
-        )
-        child.parent = Account.objects.get(id=request.user.id)
-        child.is_child = True
-        child.country = country
-        child.user_type = 2
-        child.save()
-        response = child_password_and_phone_number_send_to_phone(
-            phone=phone,
-            password=pin,
-            name=username
-        )
+            )
+            child.parent = Account.objects.get(id=request.user.id)
+            child.is_child = True
+            child.country = country
+            child.user_type = 2
+            child.save()
+            response = child_password_and_phone_number_send_to_phone(
+                phone=phone,
+                password=pin,
+                name=username
+            )
+        except:
+            response = "Error"
+            messages.info(request, f"Child already exist")
+            print(response)
         print(response)
         try:
             f = open(settings.MEDIA_ROOT + f"/africastalking/sms_consoles/{datetime.datetime.now().strftime('%Y-%m-%d')}.txt", "a+")
@@ -329,6 +339,7 @@ def add_child(request):
         f.write(str(response) + "\n")
     
         print("Saved Child")
+        messages.info(request, f"Child has been added")
 
     return render(request,'parent/add_child.html')
 
