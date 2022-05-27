@@ -152,31 +152,12 @@ def register(request):
             password=make_password(pin),
             email = phone + "@gmail.com"
         )
-        parent.save()
-        user = authenticate(request,username=phone,password=pin)
-        login(request,parent)
-        # except:
-        print("Error")
-
-        
-        # parent = Account.objects.create_user(
-        #         phone_number = phone,
-        #         user_name = username,
-        #         password=make_password(pin),
-        #         email = "parent@gmail.com",
-        # )
-        # login(request,parent)
-        
-
-        print("Authenticated")
-        print(make_password(pin))
         parent.is_parent = True
         
         parent.save()
 
-        #authenticate the user to remove the error anonoymous user _meta object
-        # user = authenticate(username=phone, password=pin)
-        # login(request,user)
+        user = authenticate(request,username=phone,password=pin)
+        login(request,parent)
 
         phonenumber = phone
         otp_number = random_number_generator(size=4)
@@ -228,14 +209,19 @@ def otp(request):
     if request.method == "POST":
         phone = request.GET.get('phone')
         otp = request.POST.get('otp')
+        phone = str(phone)
+        phone = phone[len(phone)-12:]
+        print(phone)
 
         #Validate otp to authenticate the user
         validate_otp = Otps.objects.all()
         print("test1")
         for otps in validate_otp:
             print(otps.otp)
-            print(otps.phone_number)
-            if  str(otp) == str(otps.otp) and str(phone)==str(otps.phone_number):
+            db_phone = str(otps.phone_number)
+            print(db_phone)
+            new_db_phone = db_phone.replace('+', '')
+            if  str(otp) == str(otps.otp) and str(phone)==new_db_phone:
                 print("test3")
                 if datetime.now().replace(tzinfo=utc) <= (otps.expire_at.replace(tzinfo=utc)):
                     print("test4")
