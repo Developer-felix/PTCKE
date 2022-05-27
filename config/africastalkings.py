@@ -59,7 +59,7 @@ def child_password_and_phone_number_send_to_phone(
 
             
 def send_otp_to_validate_phone(phone,otp):
-    return sms.send("Your OTP is ",[phone])
+    return sms.send("Your OTP is "+str(otp)+".",[phone])
 
 
 # try:
