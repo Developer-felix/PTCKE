@@ -166,35 +166,18 @@ def transfer_cash(request,reciever_id):
     }
     return render(request,'child/child_top_up.html',data)              
                 
-                # transaction_id = serializer.data["transaction_id"]
-                # send_transaction_message_response_to_reciever_phone(transaction_id=transaction_id,
-                #                                                     phone_number= receiver_phone_number,
-                #                                                     sender_name= sender_name_c,
-                #                                                     reciever_name=receiver_name_c,
-                #                                                     amount=int(request.data["ammount"]),
-                #                                                     date=transaction_date,
-                #                                                     time=transaction_time,
-                #                                                     balance=receiver_balance)
-                                                                    
-                # send_transaction_message_response_to_sender_phone(  transaction_id=transaction_id,
-                #                                                     phone_number= sender_phone_number,
-                #                                                     sender_name= sender_name_c,
-                #                                                     reciever_name=receiver_name_c,
-                #                                                     amount=int(request.data["ammount"]),
-                #                                                     date=transaction_date,
-                #                                                     time=transaction_time,
-                #                                                     balance=sender_balance)
-                
-        #         return Response({"success": True, "errors": None, "status_code": 0,
-        #                      "status_message": "Transaction Success",
-        #                      "message": "Transaction Success","data": serializer.data}, status=status.HTTP_201_CREATED)
-        #     return Response( {"success": False, "status_code": 1,"errors": serializer.errors,
-        #                      "status_message": "Transaction Failed",
-        #                      "message": "Transaction Failed", "data": serializer.data
-        #                      },)
-        # else:
-        #     return Response( {"success": False, "status_code": 1,
-        #                      "status_message": f"Insuficient balance of {sender.account_balance}",
-        #                      "message": "Insuficient balance", "data": None
-        #                      },)
 
+def child_withdraw(request):
+    if request.method == 'POST':
+        ammount = request.POST.get("ammount")
+        user_id = request.user.id
+        wallet = Wallet.objects.filter(user_id=user_id)
+        for wallet in wallet:
+            wallet_balance =  wallet.account_balance
+        if int(ammount) <= int(wallet_balance):
+            updated_balance = int(wallet_balance) - int(ammount)
+            Wallet.objects.filter(user_id=request.user.id).update(account_balance=updated_balance)
+            return redirect("success_withdraw/?ammount="+ammount)
+        else:
+            return redirect("error_withdraw/?ammount="+ammount)
+    return render(request,'child/child_withdraw.html')
