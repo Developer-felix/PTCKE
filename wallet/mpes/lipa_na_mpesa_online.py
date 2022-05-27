@@ -43,8 +43,8 @@ def lipa_na_mpesa(phone_number,ammount):
     response = requests.post(api_url,json=request,headers=headers)
 
 # lipa_na_mpesa(phone_number="254717713943",ammount="1")
-lnm = LNMOnline.objects.all()
-for l in lnm:
-    print(l.Amount)
+# lnm = LNMOnline.objects.all()
+# for l in lnm:
+#     print(l.Amount)
 
 
