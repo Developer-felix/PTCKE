@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -14,9 +15,9 @@
     <link rel="manifest" href="manifest.json" />
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="assets/img/favicon180.png" sizes="180x180">
-    <link rel="icon" href="assets/img/favicon32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="assets/img/favicon16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="{% static 'assets/img/favicon180.png' %}" sizes="180x180">
+    <link rel="icon" href="{% static 'assets/img/favicon32.png' %}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{% static 'assets/img/favicon16.png' %}" sizes="16x16" type="image/png">
 
     <!-- Google fonts-->
 
@@ -28,10 +29,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <!-- swiper carousel css -->
-    <link rel="stylesheet" href="assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css' %}">
 
     <!-- style css for this template -->
-    <link href="assets/css/style.css" rel="stylesheet" id="style">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" id="style">
 </head>
 
 <body class="body-scroll" data-page="sendmoney1">
@@ -41,7 +42,7 @@
         <div class="row h-100">
             <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
                 <div class="loader-cube-wrap loader-cube-animate mx-auto">
-                    <img src="assets/img/logo.png" alt="Logo">
+                    <img src="{% static 'assets/img/logo.png'%}" alt="Logo">
                 </div>
                 <p class="mt-4">It's time for track budget<br><strong>Please wait...</strong></p>
             </div>
@@ -260,31 +261,31 @@
 
 
     <!-- Required jquery and libraries -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js' %}"></script>
 
     <!-- cookie js -->
-    <script src="assets/js/jquery.cookie.js"></script>
+    <script src="{% static 'assets/js/jquery.cookie.js' %}"></script>
 
     <!-- Customized jquery file  -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/color-scheme.js"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/color-scheme.js' %}"></script>
 
     <!-- PWA app service registration and works -->
-    <script src="assets/js/pwa-services.js"></script>
+    <script src="{% static 'assets/js/pwa-services.js' %}"></script>
 
     <!-- Chart js script -->
-    <script src="assets/vendor/chart-js-3.3.1/chart.min.js"></script>
+    <script src="{% static 'assets/vendor/chart-js-3.3.1/chart.min.js' %}"></script>
 
     <!-- Progress circle js script -->
-    <script src="assets/vendor/progressbar-js/progressbar.min.js"></script>
+    <script src="{% static 'assets/vendor/progressbar-js/progressbar.min.js' %}"></script>
 
     <!-- swiper js script -->
-    <script src="assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
+    <script src="{% static 'assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js' %}"></script>
 
     <!-- page level custom script -->
-    <script src="assets/js/app.js"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
 
 </body>
 
