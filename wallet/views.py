@@ -181,3 +181,10 @@ def child_withdraw(request):
         else:
             return redirect("error_withdraw/?ammount="+ammount)
     return render(request,'child/child_withdraw.html')
+
+def withdraw_success(request):
+    ammount = request.GET.get("ammount")
+    data = {
+        "ammount" : ammount
+    }
+    return render(request,'child/withdraw_success.html',data)

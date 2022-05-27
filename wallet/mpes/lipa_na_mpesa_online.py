@@ -36,7 +36,7 @@ def lipa_na_mpesa(phone_number,ammount):
                 "PartyA": keys.phone_number,
                 "PartyB": keys.businessshortCode,
                 "PhoneNumber": phone_number,
-                "CallBackURL": "https://tranquil-stream-15304.herokuapp.com/mpesa_callback",
+                "CallBackURL": "https://tranquil-stream-15304.herokuapp.com/lnm/",
                 "AccountReference": "PTC Manager",
                 "TransactionDesc": "Sending money to ptc Account"
             }
