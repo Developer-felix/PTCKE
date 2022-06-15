@@ -41,6 +41,7 @@ def lipa_na_mpesa(phone_number,ammount):
                 "TransactionDesc": "Sending money to ptc Account"
             }
     response = requests.post(api_url,json=request,headers=headers)
+    print(response)
 
 # lipa_na_mpesa(phone_number="254717713943",ammount="1")
 # lnm = LNMOnline.objects.all()

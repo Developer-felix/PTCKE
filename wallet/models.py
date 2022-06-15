@@ -22,7 +22,6 @@ class Wallet(models.Model):
     widrawal_procedure = models.PositiveSmallIntegerField(choices=widrawal_procedure,blank=True, null=True,default=4)
     withdrawable_settime = models.CharField(max_length=255,null=True,blank=True)
     updated_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
-
     account_phone_number = models.CharField(max_length=255,unique=True,null=True) 
 
     def save(self, *args, **kwargs):

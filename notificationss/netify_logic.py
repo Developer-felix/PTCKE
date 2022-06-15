@@ -2,7 +2,7 @@ from aiohttp import Payload
 from django.conf import settings
 from pyfcm import FCMNotification
 
-from notification.models import MobileNotification
+from notificationss.models import MobileNotification
 from users.models import Account
 # importing APNs
 from apns import APNs, Payload

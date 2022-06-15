@@ -7,6 +7,7 @@ from django.conf import settings
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from matplotlib import use
 from config.africastalkings import child_password_and_phone_number_send_to_phone, send_otp_to_validate_phone
 from transaction.models import Transaction
 from pytz import utc
@@ -24,8 +25,23 @@ from django.urls import reverse
 from wallet.models import Wallet
 
 
+
 def error_404_view(request, exception):
     return render(request,'404.html')
+
+
+
+from datetime import datetime
+current_time = datetime.now().strftime("%Y%m%d%H%M%S")
+
+def process(user_id):
+    walet = Wallet.objects.filter(user=user_id)
+    for walet in walet:
+        print("Walet Update Time {}",walet.updated_at.strftime("%Y%m%d%H%M%S"))
+        print("Walet Withrawable Procedure {}",walet.widrawal_procedure)
+        print("Walet Ammount To Withdraw {}",walet.ammount_to_withdraw)
+
+        
 
 def delete_child(request, id):
   member = Account.objects.get(id=id)
@@ -235,7 +251,10 @@ def otp(request):
 
 def child_dashboard(request):
     global wallet_balance
-    user_id = request.user.id 
+    user_id = request.user.id
+
+    process(user_id=user_id)
+
     user_phone = request.user.phone_number
     transactions = Transaction.objects.filter(sender=user_id).order_by('-id')
     
@@ -246,6 +265,16 @@ def child_dashboard(request):
             # x = wallet_balance.split(',',-3)
             print(wallet_balance)
             return wallet_balance
+        
+    def w_balance_func():
+        wallet = Wallet.objects.filter(user_id=user_id)
+        for wallet in wallet:
+            w_wallet_balance = wallet.withrawable_balance
+            # x = wallet_balance.split(',',-3)
+            print(w_wallet_balance)
+            return w_wallet_balance
+    
+    print(balance_func())
     
     print(user_id)
     if request.user.is_authenticated:
@@ -254,8 +283,9 @@ def child_dashboard(request):
     data = {
         "balance" : balance_func(),
         "transactions" : transactions,
+        "w_wallet_balance":w_balance_func(),
     }
-    return render(request,'child/dashboard.html')
+    return render(request,'child/dashboard.html',data)
 
 def parent_dashboard(request):
     global wallet_balance
@@ -311,17 +341,17 @@ def add_child(request):
             child.country = country
             child.user_type = 2
             child.save()
-            response = child_password_and_phone_number_send_to_phone(
-                phone=phone,
-                password=pin,
-                name=username
-            )
+            # response = child_password_and_phone_number_send_to_phone(
+            #     phone=phone,
+            #     password=pin,
+            #     name=username
+            # )
         except:
             response = "Error"
             messages.info(request, f"Child already exist")
             print(response)
             return redirect("users:ptc_parent_add_child")
-        print(response)
+        
         try:
             f = open(settings.MEDIA_ROOT + f"/africastalking/sms_consoles/{datetime.datetime.now().strftime('%Y-%m-%d')}.txt", "a+")
             f.write(f"{datetime.datetime.now()} - {response}\n")
@@ -335,7 +365,7 @@ def add_child(request):
                 except:
                     pass
             f = open(settings.MEDIA_ROOT + f"/africastalking/sms_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
-        f.write(str(response) + "\n")
+        # f.write(str(response) + "\n")
     
         print("Saved Child")
         messages.info(request, f"Child has been added")
