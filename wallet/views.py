@@ -30,7 +30,7 @@ def top_up(request):
         print(wallet_balance)
         updated_balance = int(wallet_balance) + int(ammount)
 
-        Wallet.objects.filter(user_id=request.user.id).update(account_balance=updated_balance)
+        Wallet.objects.filter(user_id=request.user.id).update(account_balance=str(updated_balance))
 
         #Succes Modals
         return redirect("success/?ammount="+ammount)

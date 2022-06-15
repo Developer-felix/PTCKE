@@ -1,6 +1,7 @@
 import requests
 from requests.auth import HTTPBasicAuth
 from wallet.mpes import keys
+
 def generate_access_token():
     #getting the access tocken
     # consumer_key = consumer_key
