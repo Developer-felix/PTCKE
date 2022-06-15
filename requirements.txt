@@ -1,5 +1,6 @@
 africastalking==1.2.4
 asgiref==3.4.1
+apns==2.0.1
 certifi==2021.10.8
 charset-normalizer==2.0.7
 contextlib2==21.6.0

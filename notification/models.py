@@ -3,6 +3,7 @@ from django.dispatch import receiver
 from django.db.models.signals import pre_save , post_save
 from django.utils import timezone
 from model_utils.models import TimeStampedModel
+from notification.netify_logic import send_new_message_push_notification
 from users.models import Account
 
 class MobileDevice(models.Model):
