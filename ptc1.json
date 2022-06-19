@@ -1,0 +1,227 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"ptc1"},
+{"type":"table","name":"auth_group","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"auth_group_permissions","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"auth_permission","database":"ptc1","data":
+[
+{"id":"1","name":"Can add log entry","content_type_id":"1","codename":"add_logentry"},
+{"id":"2","name":"Can change log entry","content_type_id":"1","codename":"change_logentry"},
+{"id":"3","name":"Can delete log entry","content_type_id":"1","codename":"delete_logentry"},
+{"id":"4","name":"Can view log entry","content_type_id":"1","codename":"view_logentry"},
+{"id":"5","name":"Can add permission","content_type_id":"2","codename":"add_permission"},
+{"id":"6","name":"Can change permission","content_type_id":"2","codename":"change_permission"},
+{"id":"7","name":"Can delete permission","content_type_id":"2","codename":"delete_permission"},
+{"id":"8","name":"Can view permission","content_type_id":"2","codename":"view_permission"},
+{"id":"9","name":"Can add group","content_type_id":"3","codename":"add_group"},
+{"id":"10","name":"Can change group","content_type_id":"3","codename":"change_group"},
+{"id":"11","name":"Can delete group","content_type_id":"3","codename":"delete_group"},
+{"id":"12","name":"Can view group","content_type_id":"3","codename":"view_group"},
+{"id":"13","name":"Can add content type","content_type_id":"4","codename":"add_contenttype"},
+{"id":"14","name":"Can change content type","content_type_id":"4","codename":"change_contenttype"},
+{"id":"15","name":"Can delete content type","content_type_id":"4","codename":"delete_contenttype"},
+{"id":"16","name":"Can view content type","content_type_id":"4","codename":"view_contenttype"},
+{"id":"17","name":"Can add session","content_type_id":"5","codename":"add_session"},
+{"id":"18","name":"Can change session","content_type_id":"5","codename":"change_session"},
+{"id":"19","name":"Can delete session","content_type_id":"5","codename":"delete_session"},
+{"id":"20","name":"Can view session","content_type_id":"5","codename":"view_session"},
+{"id":"21","name":"Can add account","content_type_id":"6","codename":"add_account"},
+{"id":"22","name":"Can change account","content_type_id":"6","codename":"change_account"},
+{"id":"23","name":"Can delete account","content_type_id":"6","codename":"delete_account"},
+{"id":"24","name":"Can view account","content_type_id":"6","codename":"view_account"},
+{"id":"25","name":"Can add lnm online","content_type_id":"7","codename":"add_lnmonline"},
+{"id":"26","name":"Can change lnm online","content_type_id":"7","codename":"change_lnmonline"},
+{"id":"27","name":"Can delete lnm online","content_type_id":"7","codename":"delete_lnmonline"},
+{"id":"28","name":"Can view lnm online","content_type_id":"7","codename":"view_lnmonline"},
+{"id":"29","name":"Can add transaction","content_type_id":"8","codename":"add_transaction"},
+{"id":"30","name":"Can change transaction","content_type_id":"8","codename":"change_transaction"},
+{"id":"31","name":"Can delete transaction","content_type_id":"8","codename":"delete_transaction"},
+{"id":"32","name":"Can view transaction","content_type_id":"8","codename":"view_transaction"},
+{"id":"33","name":"Can add access token","content_type_id":"9","codename":"add_accesstoken"},
+{"id":"34","name":"Can change access token","content_type_id":"9","codename":"change_accesstoken"},
+{"id":"35","name":"Can delete access token","content_type_id":"9","codename":"delete_accesstoken"},
+{"id":"36","name":"Can view access token","content_type_id":"9","codename":"view_accesstoken"},
+{"id":"37","name":"Can add wallet","content_type_id":"10","codename":"add_wallet"},
+{"id":"38","name":"Can change wallet","content_type_id":"10","codename":"change_wallet"},
+{"id":"39","name":"Can delete wallet","content_type_id":"10","codename":"delete_wallet"},
+{"id":"40","name":"Can view wallet","content_type_id":"10","codename":"view_wallet"},
+{"id":"41","name":"Can add otps","content_type_id":"11","codename":"add_otps"},
+{"id":"42","name":"Can change otps","content_type_id":"11","codename":"change_otps"},
+{"id":"43","name":"Can delete otps","content_type_id":"11","codename":"delete_otps"},
+{"id":"44","name":"Can view otps","content_type_id":"11","codename":"view_otps"},
+{"id":"45","name":"Can add images","content_type_id":"12","codename":"add_images"},
+{"id":"46","name":"Can change images","content_type_id":"12","codename":"change_images"},
+{"id":"47","name":"Can delete images","content_type_id":"12","codename":"delete_images"},
+{"id":"48","name":"Can view images","content_type_id":"12","codename":"view_images"},
+{"id":"49","name":"Can add with drawals","content_type_id":"13","codename":"add_withdrawals"},
+{"id":"50","name":"Can change with drawals","content_type_id":"13","codename":"change_withdrawals"},
+{"id":"51","name":"Can delete with drawals","content_type_id":"13","codename":"delete_withdrawals"},
+{"id":"52","name":"Can view with drawals","content_type_id":"13","codename":"view_withdrawals"}
+]
+}
+,{"type":"table","name":"django_admin_log","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"django_content_type","database":"ptc1","data":
+[
+{"id":"1","app_label":"admin","model":"logentry"},
+{"id":"3","app_label":"auth","model":"group"},
+{"id":"2","app_label":"auth","model":"permission"},
+{"id":"4","app_label":"contenttypes","model":"contenttype"},
+{"id":"9","app_label":"django_daraja","model":"accesstoken"},
+{"id":"12","app_label":"images","model":"images"},
+{"id":"11","app_label":"otp","model":"otps"},
+{"id":"5","app_label":"sessions","model":"session"},
+{"id":"7","app_label":"transaction","model":"lnmonline"},
+{"id":"8","app_label":"transaction","model":"transaction"},
+{"id":"6","app_label":"users","model":"account"},
+{"id":"10","app_label":"wallet","model":"wallet"},
+{"id":"13","app_label":"wallet","model":"withdrawals"}
+]
+}
+,{"type":"table","name":"django_daraja_accesstoken","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"django_migrations","database":"ptc1","data":
+[
+{"id":"1","app":"otp","name":"0001_initial","applied":"2022-05-27 13:50:30.517591"},
+{"id":"2","app":"contenttypes","name":"0001_initial","applied":"2022-05-27 13:50:30.655039"},
+{"id":"3","app":"contenttypes","name":"0002_remove_content_type_name","applied":"2022-05-27 13:50:30.788339"},
+{"id":"4","app":"auth","name":"0001_initial","applied":"2022-05-27 13:50:31.553984"},
+{"id":"5","app":"auth","name":"0002_alter_permission_name_max_length","applied":"2022-05-27 13:50:31.712991"},
+{"id":"6","app":"auth","name":"0003_alter_user_email_max_length","applied":"2022-05-27 13:50:31.727993"},
+{"id":"7","app":"auth","name":"0004_alter_user_username_opts","applied":"2022-05-27 13:50:31.744016"},
+{"id":"8","app":"auth","name":"0005_alter_user_last_login_null","applied":"2022-05-27 13:50:31.758991"},
+{"id":"9","app":"auth","name":"0006_require_contenttypes_0002","applied":"2022-05-27 13:50:31.765994"},
+{"id":"10","app":"auth","name":"0007_alter_validators_add_error_messages","applied":"2022-05-27 13:50:31.777997"},
+{"id":"11","app":"auth","name":"0008_alter_user_username_max_length","applied":"2022-05-27 13:50:31.790986"},
+{"id":"12","app":"auth","name":"0009_alter_user_last_name_max_length","applied":"2022-05-27 13:50:31.804984"},
+{"id":"13","app":"auth","name":"0010_alter_group_name_max_length","applied":"2022-05-27 13:50:31.840988"},
+{"id":"14","app":"auth","name":"0011_update_proxy_permissions","applied":"2022-05-27 13:50:31.857992"},
+{"id":"15","app":"auth","name":"0012_alter_user_first_name_max_length","applied":"2022-05-27 13:50:31.872988"},
+{"id":"16","app":"users","name":"0001_initial","applied":"2022-05-27 13:50:32.878556"},
+{"id":"17","app":"admin","name":"0001_initial","applied":"2022-05-27 13:50:33.216426"},
+{"id":"18","app":"admin","name":"0002_logentry_remove_auto_add","applied":"2022-05-27 13:50:33.233566"},
+{"id":"19","app":"admin","name":"0003_logentry_add_action_flag_choices","applied":"2022-05-27 13:50:33.251658"},
+{"id":"20","app":"django_daraja","name":"0001_initial","applied":"2022-05-27 13:50:33.331686"},
+{"id":"21","app":"django_daraja","name":"0002_auto_20181108_1219","applied":"2022-05-27 13:50:33.450683"},
+{"id":"22","app":"django_daraja","name":"0003_alter_accesstoken_id","applied":"2022-05-27 13:50:33.630960"},
+{"id":"23","app":"images","name":"0001_initial","applied":"2022-05-27 13:50:33.689798"},
+{"id":"24","app":"sessions","name":"0001_initial","applied":"2022-05-27 13:50:33.805197"},
+{"id":"25","app":"transaction","name":"0001_initial","applied":"2022-05-27 13:50:33.943779"},
+{"id":"26","app":"transaction","name":"0002_auto_20220527_0434","applied":"2022-05-27 13:50:34.739041"},
+{"id":"27","app":"users","name":"0002_auto_20220522_0944","applied":"2022-05-27 13:50:37.394041"},
+{"id":"28","app":"users","name":"0003_alter_account_id","applied":"2022-05-27 13:50:39.105046"},
+{"id":"29","app":"users","name":"0004_auto_20220522_2350","applied":"2022-05-27 13:50:39.350043"},
+{"id":"30","app":"users","name":"0005_auto_20220523_0112","applied":"2022-05-27 13:50:39.497039"},
+{"id":"31","app":"users","name":"0006_account_email","applied":"2022-05-27 13:50:39.539045"},
+{"id":"32","app":"users","name":"0007_account_parent","applied":"2022-05-27 13:50:39.669047"},
+{"id":"33","app":"users","name":"0008_account_avatar","applied":"2022-05-27 13:50:39.727040"},
+{"id":"34","app":"users","name":"0009_alter_account_is_parent","applied":"2022-05-27 13:50:39.747044"},
+{"id":"35","app":"users","name":"0010_alter_account_is_parent","applied":"2022-05-27 13:50:39.767041"},
+{"id":"36","app":"wallet","name":"0001_initial","applied":"2022-05-27 13:50:40.048100"},
+{"id":"37","app":"wallet","name":"0002_withdrawals","applied":"2022-06-19 08:59:15.498145"},
+{"id":"38","app":"wallet","name":"0003_alter_withdrawals_status","applied":"2022-06-19 09:07:05.525335"}
+]
+}
+,{"type":"table","name":"django_session","database":"ptc1","data":
+[
+{"session_key":"1fwwtxtjvnd8gw097pivo5t8uah7xey6","session_data":"e30:1o2qTf:25IMUOzINGTT4XiRM0AYqS9g0noOf9dlk_Iv0qoP_0U","expire_date":"2022-07-03 08:40:15.639192"},
+{"session_key":"2t2yv802lzpln6c1bvniyrmt0eho29wt","session_data":"e30:1o1P9z:HZdsgYLrzjE8PH_d_hdg3N4XTg-b4e9hNwf5buluGFI","expire_date":"2022-06-29 09:17:59.286687"},
+{"session_key":"8a36ymcw5kt4akvnr8pv7aci3aofsaie","session_data":"e30:1nuaNJ:Z6QSk0mrRUJUICrGhp25zlyrtfD_vPDoRRrKz_qeLYU","expire_date":"2022-06-10 13:51:33.213430"},
+{"session_key":"9cmpl94qomkkh28i850f2skjnvi0a88z","session_data":"e30:1nuaQI:8ESyrI2ublO7kHROySDoM5Fh7sLmAQ9tbBweiGXCveI","expire_date":"2022-06-10 13:54:38.857417"},
+{"session_key":"b1lv9rb8j31hivfspk222c6lh9vrwdht","session_data":".eJxVjMsOwiAQRf-FtSFAGR4u3fsNZBhAqgaS0q6M_65NutDtPefcFwu4rTVsIy9hTuzMJDv9bhHpkdsO0h3brXPqbV3myHeFH3Twa0_5eTncv4OKo35roCKitVOCmD0JBxCdcNn7ggK1NjIaVZQD5ZXTIKkUA6itMxaFnKiw9wfZKTdT:1nuaRd:0DfskVrTNVYJdjP1JihvWCEZ3GoWMT4ABZLd_BWJbRE","expire_date":"2022-06-10 13:56:01.816005"},
+{"session_key":"bkmgwwdqlugtys09jili10b9b9836z3e","session_data":"e30:1o2qR7:8Lxlcv577QWVqqMqPEW7tOIt-2kUWjj1mFeSwb0VBJk","expire_date":"2022-07-03 08:37:37.917853"},
+{"session_key":"bp14tli1cb2irw3eoir78kdba8x1bs8l","session_data":"e30:1o2nqi:xMEZETsE_dr5MBkJdhxHBG_f_AnD2QHh4EwnRspOouc","expire_date":"2022-07-03 05:51:52.908581"},
+{"session_key":"d2ec8ts9h4w8lj8us061wb2gp6uzqmx0","session_data":"e30:1o2qSs:zFouS97Z4ehgpejTB0ntV4L35XnCotRX2PvLJ_vrPyc","expire_date":"2022-07-03 08:39:26.479827"},
+{"session_key":"dc1fk420wq4xc1sdcmi3t7b2pef7twzh","session_data":"e30:1o2qVs:AQeo7GWjDYaf1TymjfGX0DOAbNDlFvY--AtpjBOi5AY","expire_date":"2022-07-03 08:42:32.600096"},
+{"session_key":"gb132x0khgptph17zui90sioq3cywzmd","session_data":".eJxVjMEOwiAQRP-FsyEVFigevfsNZGEXqRpISnsy_rtt0oPOcd6beYuA61LC2nkOE4mLAHH67SKmJ9cd0APrvcnU6jJPUe6KPGiXt0b8uh7u30HBXrZ1NnAetNHkOI7sRo_sFSiF3hrOKRo9gLXKWc3ZgSOr2OUcCbdYBBCfL9amOBQ:1o1RMX:scVgSkbMcbidSQ_Td_4kMumZqXWBby6hSKLfdi7yKXg","expire_date":"2022-06-29 11:39:05.207465"},
+{"session_key":"hekfig69htg05kack4z81t8oc32zmzi5","session_data":"e30:1nuaQ7:MXq5bDcvhqCnFlK7jQJ6PrCXNr6-M-1DuMZFaT0BEVg","expire_date":"2022-06-10 13:54:27.480563"},
+{"session_key":"htqwtpigtvvdanzulqfff5ghcua21lnj","session_data":"e30:1o1PAh:bHx5G2o8agGLo3vn5ryqXGhOexRLYugGMpMYz4V47hc","expire_date":"2022-06-29 09:18:43.267538"},
+{"session_key":"jijm9tm8z277pf9cxktlu1d4rbve4nmr","session_data":"e30:1o2qSI:ow23j7XQ5pbgh0iE3DXDgymVkOsAdOstrUv95gZbjvQ","expire_date":"2022-07-03 08:38:50.570184"},
+{"session_key":"lmqm5i2nljq8qwfuwgoqt4edrqgc9en2","session_data":".eJxVjMsOwiAQRf-FtSFAGR4u3fsNZBhAqgaS0q6M_65NutDtPefcFwu4rTVsIy9hTuzMJDv9bhHpkdsO0h3brXPqbV3myHeFH3Twa0_5eTncv4OKo35roCKitVOCmD0JBxCdcNn7ggK1NjIaVZQD5ZXTIKkUA6itMxaFnKiw9wfZKTdT:1nuaxF:kqFKF155jqMJgyNf-rV_KBretgO4KfTNtDixFzOeaT4","expire_date":"2022-06-10 14:28:41.030408"},
+{"session_key":"r8ros0f4bhfd2ipr50bn0z795ezo1ofc","session_data":"e30:1o2qRR:jAvf0McWTdytk6Yc_tW4Aj_mMSq5yjwjBcDL0QrUjUM","expire_date":"2022-07-03 08:37:57.554799"},
+{"session_key":"rylz1nlvnpq0d8lla4o3d5hu4fs9pw6u","session_data":"e30:1o2qRa:-6NEZ4cbF4m2-3rU1OKbD-knXvRBztbW9TgVLHZdSeU","expire_date":"2022-07-03 08:38:06.324312"},
+{"session_key":"tcuebqmh9nhb9rwnpt83navdhlgdupaf","session_data":"e30:1o2nfj:NQTM9SoMRo1uhCO2HnadCdwO_IsSgVekuRgXY3xxdxs","expire_date":"2022-07-03 05:40:31.375157"},
+{"session_key":"u1dd15fc000t13xg692720n8cqpw0xjh","session_data":".eJxVjDsOwjAQBe_iGlm2499S0nMGa9cfHEC2FCcV4u4QKQW0b2beiwXc1hq2kZcwJ3ZmwE6_G2F85LaDdMd26zz2ti4z8V3hBx382lN-Xg7376DiqN_aE-VSAIXKk0IEZwpBBJIRtPYJtMlWqORl1LaIQg4sGeumqCFNWiJ7fwAFGTgg:1o2qbw:uUtVrDtSpUWJVfwNI1nJeIV5RjUo_YFqqmxkaOEcwcc","expire_date":"2022-07-03 08:48:48.787156"},
+{"session_key":"xyb6xrfep4g3xexh5nab9h1oacuvhulf","session_data":"e30:1o2qZS:jKtw2vUUyAIMSjOO2OiSpfTexgM1bris9EeJ7hInHoM","expire_date":"2022-07-03 08:46:14.508388"},
+{"session_key":"zkj731meku4r982x22n5233yvpqbv10g","session_data":".eJxVjDsOwyAQBe9CHSF-CyJl-pwBsbAEJxFIxq6s3D225CJp38y8jYW4LjWsg-YwZXZlwC6_G8b0onaA_Izt0XnqbZkn5IfCTzr4vWd6307376DGUfdaoFBRA2gvQQORTwosGJIgitekUpG5WNopGedSdsWARBupWIcZHft8AclPN-A:1o1PEz:2fE3-2JwHJdlAGZT53v7J7fmneoHqphCbOXVjoK8hB0","expire_date":"2022-06-29 09:23:09.759375"}
+]
+}
+,{"type":"table","name":"tbl_accounts","database":"ptc1","data":
+[
+{"id":"1","password":"pbkdf2_sha256$260000$KTauSBYXP4LN3tqH6W4INd$MessZuXVHcv8DFl5CBVEbEEYYbLuYq3uc1kLh2IQKOc=","last_login":"2022-05-27 14:28:41.011403","is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"+254717713943","country":"Kenya","is_parent":"1","is_admin_user":"0","is_child":"0","otp_id":null,"created_at":"2022-05-27 13:52:02.846138","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-05-27 13:52:02.846138","user_name":"Felix Onjomba","user_type":"2","email":"+254717713943@gmail.com","parent_id":null,"avatar":"profile.jpg"},
+{"id":"2","password":"pbkdf2_sha256$260000$KqNZE6dVmVrUxhmL90UcDg$dgG74vtCPYY9fjILjUu401W\/aI5\/pjI2yPitfIZG1+4=","last_login":"2022-05-27 13:55:14.284067","is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"+254711111111","country":"Kenya","is_parent":"0","is_admin_user":"0","is_child":"1","otp_id":null,"created_at":"2022-05-27 13:53:24.757235","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-05-27 13:53:24.757235","user_name":"+254711111111","user_type":"2","email":null,"parent_id":"1","avatar":"profile.jpg"},
+{"id":"3","password":"pbkdf2_sha256$260000$2doJtVz2xn1yuVo5sxZBlY$qDs8kZ4x+MTleThojYM1P0KnbaW477D1UKY3A5vc30Y=","last_login":"2022-06-15 09:17:59.293051","is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"+254717713941","country":"Kenya","is_parent":"1","is_admin_user":"0","is_child":"0","otp_id":null,"created_at":"2022-06-15 09:17:59.073614","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-06-15 09:17:59.073614","user_name":"Susan","user_type":"2","email":"+254717713941@gmail.com","parent_id":null,"avatar":"profile.jpg"},
+{"id":"4","password":"pbkdf2_sha256$260000$d16Ceac8Fjw7LuGLqXs6by$tGCK9mmRUqXNVTRknt3oFPg\/gH394YT9zRUXillv9a4=","last_login":"2022-06-15 11:39:05.152470","is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"+254717713947","country":"Kenya","is_parent":"1","is_admin_user":"0","is_child":"0","otp_id":null,"created_at":"2022-06-15 09:18:43.035806","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-06-15 09:18:43.035806","user_name":"admin","user_type":"2","email":"+254717713947@gmail.com","parent_id":null,"avatar":"profile.jpg"},
+{"id":"5","password":"pbkdf2_sha256$260000$yBp4fkq5dEYJpNIBqnaxHM$Htwv8aEjxp0xIPSjQQBMLD7ZGJHI2WdF1KnGx4LqmHk=","last_login":"2022-06-15 09:23:09.748417","is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"+254717713948","country":"Uganda","is_parent":"0","is_admin_user":"0","is_child":"1","otp_id":null,"created_at":"2022-06-15 09:21:53.175435","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-06-15 09:21:53.175435","user_name":"Test","user_type":"2","email":null,"parent_id":"4","avatar":"profile.jpg"},
+{"id":"6","password":"pbkdf2_sha256$260000$vFHMT92wftUVvyRS5TYjaj$5NyjlkxcQ5uUosTeWY7h8hRbhfFMmhonvxBfLVhoV5U=","last_login":"2022-06-19 08:44:58.696890","is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"+254710101010","country":"Kenya","is_parent":"1","is_admin_user":"0","is_child":"0","otp_id":null,"created_at":"2022-06-19 05:39:56.245258","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-06-19 05:39:56.245258","user_name":"1010","user_type":"2","email":"+254710101010@gmail.com","parent_id":null,"avatar":"profile.jpg"},
+{"id":"7","password":"pbkdf2_sha256$260000$KaNW0o0N1BKfEYdfmc7gdn$gjFQdFsK8gWzMraHxyvbQXcAA3MAtyrSdZ8VjLNsANE=","last_login":null,"is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"0711111111","country":"Kenya","is_parent":"0","is_admin_user":"0","is_child":"1","otp_id":null,"created_at":"2022-06-19 08:36:21.229109","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-06-19 08:36:21.229109","user_name":"","user_type":"2","email":null,"parent_id":"6","avatar":"profile.jpg"},
+{"id":"8","password":"pbkdf2_sha256$260000$JoPx8XKYKZkQoogxX4RRqV$7nSrsdeCpseqCHoQk5wvADZGzSq3F18xG4OLI6QwMBw=","last_login":null,"is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"+254717713940","country":"Kenya","is_parent":"0","is_admin_user":"0","is_child":"1","otp_id":null,"created_at":"2022-06-19 08:41:22.024216","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-06-19 08:41:22.024216","user_name":"Felix","user_type":"2","email":null,"parent_id":"6","avatar":"profile.jpg"},
+{"id":"9","password":"pbkdf2_sha256$260000$0rihLVeQy1CcqqfTJF0Has$nG99dzkegG7uwwtef4054XsqPkLPA6kDUAcYRoQkUvY=","last_login":"2022-06-19 08:48:48.774351","is_superuser":"0","first_name":null,"is_staff":"1","phone_number":"+254717713944","country":"Kenya","is_parent":"0","is_admin_user":"0","is_child":"1","otp_id":null,"created_at":"2022-06-19 08:45:25.321271","is_super_user":"0","latitude":null,"longitude":null,"second_name":null,"updated_at":"2022-06-19 08:45:25.321271","user_name":"Testing","user_type":"2","email":null,"parent_id":"6","avatar":"profile.jpg"}
+]
+}
+,{"type":"table","name":"tbl_accounts_groups","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"tbl_accounts_user_permissions","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"tbl_images","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"tbl_otp","database":"ptc1","data":
+[
+{"id":"bdcd542eb4a24726b8171ef816305834","otp":"9882","phone_number":"+254710101010","expire_at":"2022-06-19 05:44:57.787908","is_otp_authenticated":"0","created_at":"2022-06-19 05:39:57.788987","updated_at":"2022-06-19 05:39:57.788987"},
+{"id":"e088962e2dd64268a382323961885e4e","otp":"4416","phone_number":"+254717713943","expire_at":"2022-05-27 13:57:04.414739","is_otp_authenticated":"1","created_at":"2022-05-27 13:52:04.414739","updated_at":"2022-05-27 13:52:04.414739"}
+]
+}
+,{"type":"table","name":"transactions_tbl","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"transaction_lnmonline","database":"ptc1","data":
+[
+
+]
+}
+,{"type":"table","name":"wallets_tbl","database":"ptc1","data":
+[
+{"id":"1","withrawable_balance":"0","account_balance":"8801","ammount_to_withdraw":"0","widrawal_procedure":"4","withdrawable_settime":null,"updated_at":"2022-05-27 13:52:02.852159","account_phone_number":null,"user_id":"1"},
+{"id":"2","withrawable_balance":"0","account_balance":"1196","ammount_to_withdraw":"0","widrawal_procedure":"4","withdrawable_settime":null,"updated_at":"2022-05-27 13:53:24.763108","account_phone_number":null,"user_id":"2"},
+{"id":"3","withrawable_balance":"0","account_balance":"0","ammount_to_withdraw":"0","widrawal_procedure":"4","withdrawable_settime":null,"updated_at":"2022-06-15 09:17:59.081675","account_phone_number":null,"user_id":"3"},
+{"id":"4","withrawable_balance":"0","account_balance":"2831","ammount_to_withdraw":"0","widrawal_procedure":"4","withdrawable_settime":null,"updated_at":"2022-06-15 09:18:43.044095","account_phone_number":null,"user_id":"4"},
+{"id":"5","withrawable_balance":"0","account_balance":"6168","ammount_to_withdraw":"100","widrawal_procedure":"2","withdrawable_settime":null,"updated_at":"2022-06-15 09:21:53.181256","account_phone_number":null,"user_id":"5"},
+{"id":"6","withrawable_balance":"0","account_balance":"0","ammount_to_withdraw":"0","widrawal_procedure":"4","withdrawable_settime":null,"updated_at":"2022-06-19 05:39:56.269286","account_phone_number":null,"user_id":"6"},
+{"id":"7","withrawable_balance":"0","account_balance":"0","ammount_to_withdraw":"0","widrawal_procedure":"4","withdrawable_settime":null,"updated_at":"2022-06-19 08:36:21.249109","account_phone_number":null,"user_id":"7"},
+{"id":"8","withrawable_balance":"0","account_balance":"0","ammount_to_withdraw":"0","widrawal_procedure":"4","withdrawable_settime":null,"updated_at":"2022-06-19 08:41:22.030210","account_phone_number":null,"user_id":"8"},
+{"id":"9","withrawable_balance":"0","account_balance":"0","ammount_to_withdraw":"0","widrawal_procedure":"4","withdrawable_settime":null,"updated_at":"2022-06-19 08:45:25.330272","account_phone_number":null,"user_id":"9"}
+]
+}
+,{"type":"table","name":"wallet_withdrawals","database":"ptc1","data":
+[
+{"id":"1","ammount":"233","status":"1","reason":"qwer","created_at":"2022-06-19 09:04:01.175484","updated_at":"2022-06-19 09:04:01.175484","user_id":"9"},
+{"id":"2","ammount":"233","status":"Failed","reason":"qwer","created_at":"2022-06-19 09:11:29.012122","updated_at":"2022-06-19 09:11:29.012122","user_id":"9"},
+{"id":"3","ammount":"233","status":"Failed","reason":"qwer","created_at":"2022-06-19 09:13:20.341729","updated_at":"2022-06-19 09:13:20.341729","user_id":"9"}
+]
+}
+]

@@ -22,7 +22,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 
-from wallet.models import Wallet
+from wallet.models import Wallet, WithDrawals, update_wallet_balance
 
 
 
@@ -70,6 +70,8 @@ def login_user(request):
         login(request,user)
             #messages.info(request, f"You are now logged in as {phone_number}.")
             # playsound('C:\\Users\\admin\\Downloads\\note.mp3')
+        user_id = request.user.id 
+        update_wallet_balance(user_id=user_id)
         acc = Account.objects.all()
         for acc in acc:
             print(acc.phone_number)
@@ -253,10 +255,10 @@ def child_dashboard(request):
     global wallet_balance
     user_id = request.user.id
 
-    process(user_id=user_id)
+    transactions = WithDrawals.objects.filter(user_id=user_id).order_by('-id')
+
 
     user_phone = request.user.phone_number
-    transactions = Transaction.objects.filter(sender=user_id).order_by('-id')
     
     def balance_func():
         wallet = Wallet.objects.filter(user_id=user_id)

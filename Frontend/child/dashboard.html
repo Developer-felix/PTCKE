@@ -478,8 +478,14 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="text-color-theme mb-0">{{transaction.reciever.user_name}}</p>                                   
-                                    <p class="text-muted size-12">Successful</p>
+                                    <p class="text-color-theme mb-0">{{transaction.user.user_name}}</p> 
+                                    {% if transaction.status == "Failed" %}                                  
+                                    <p class="text-muted size-12" style="color: red;" >{{transaction.status}}</p>
+                                    {% else %}
+
+                                    <p class="text-muted size-12" style="color: green;">{{transaction.status}}</p>
+
+                                    {% endif %}
                                 </div>                                
                                 <div class="col align-self-center text-end">
                                     <p class="mb-0">KSH. {{transaction.ammount}}</p>                                   
