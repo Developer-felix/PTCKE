@@ -40,6 +40,28 @@ class Wallet(models.Model):
     def detail(self):
         return self.user.first_name 
 
+#Logic to update the balance of the wallet after 24 hours and weekly and monthly when the time is reached money should move from the wallet_balance to the withrawable_balance field according to the withdrawal_procedure and the withdrawable_settime and the ammount_to_withdraw field
+def update_wallet_balance(walet_id):
+    wallet = Wallet.objects.get(id=walet_id)
+    if wallet.widrawal_procedure == 1:
+        if wallet.withrawable_balance == 0:
+            wallet.withrawable_balance = wallet.account_balance
+            wallet.account_balance = 0
+            wallet.save()
+    elif wallet.widrawal_procedure == 2:
+        if wallet.withrawable_balance == 0:
+            wallet.withrawable_balance = wallet.account_balance
+            wallet.account_balance = 0
+            wallet.save()
+    elif wallet.widrawal_procedure == 3:
+        if wallet.withrawable_balance == 0:
+            wallet.withrawable_balance = wallet.account_balance
+            wallet.account_balance = 0
+            wallet.save()
+    else:
+        pass
+
+
 @receiver(post_save,sender=Account)
 def create_user_profile(sender,instance,created,**kwargs):
     if created:
