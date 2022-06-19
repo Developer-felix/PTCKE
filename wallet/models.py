@@ -49,9 +49,55 @@ def generate_timestamp():
 #Logic to update the balance of the wallet after 24 hours and weekly and monthly when the time is reached money should move from the wallet_balance to the withrawable_balance field according to the withdrawal_procedure and the withdrawable_settime and the ammount_to_withdraw field
 def update_wallet_balance(user_id):
     wallet = Wallet.objects.get(user_id=user_id)
-    current_time = generate_timestamp()
-    print(current_time)
-    print(wallet.updated_at)
+    set_time_s = wallet.updated_at.strftime("%S")
+    print(set_time_s)
+    set_time_m = wallet.updated_at.strftime("%M")
+    print(set_time_m)
+    set_time_h = wallet.updated_at.strftime("%H")
+    print(set_time_h)
+    set_time_d = wallet.updated_at.strftime("%d")
+    print(set_time_d)
+    set_time_m = wallet.updated_at.strftime("%m")
+    print(set_time_m)
+    set_time_y = wallet.updated_at.strftime("%Y")
+    print(set_time_y)
+
+    curent_time_s = datetime.now().strftime("%S")
+    print(curent_time_s)
+    curent_time_m = datetime.now().strftime("%M")
+    print(curent_time_m)
+    curent_time_h = datetime.now().strftime("%H")
+    print(curent_time_h)
+    curent_time_d = datetime.now().strftime("%d")
+    print(curent_time_d)
+    curent_time_m = datetime.now().strftime("%m")
+    print(curent_time_m)
+    curent_time_y = datetime.now().strftime("%Y")
+    print(curent_time_y)
+
+    day_difference = int(curent_time_d) - int(set_time_d)
+    print("Days : {}",day_difference)
+    month_difference = int(curent_time_m) - int(set_time_m)
+    print("Month : {}",month_difference)
+    year_difference = int(curent_time_y) - int(set_time_y)
+    print("Year : {}",year_difference)  
+    hour_difference = int(curent_time_h) - (int(set_time_h)+3)
+    print("Hours : {}",hour_difference)
+    minute_difference = int(curent_time_m) - int(set_time_m)
+    print("Minutes : {}",minute_difference)
+    second_difference = int(curent_time_s) - int(set_time_s)
+    print("Seconds : {}",second_difference)
+
+
+
+
+
+
+
+    set_time = wallet.updated_at.strftime("%Y%m%d%H%M%S")
+    print("Set Time",set_time)
+    current_time = datetime.now().strftime("%Y%m%d%H%M%S")
+    print("Current Time",current_time)
     if wallet.widrawal_procedure == 1:
         
         if wallet.withrawable_balance == 0:
