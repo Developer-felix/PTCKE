@@ -22,7 +22,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 
-from wallet.models import Wallet
+from wallet.models import Wallet, update_wallet_balance
 
 
 
@@ -70,6 +70,8 @@ def login_user(request):
         login(request,user)
             #messages.info(request, f"You are now logged in as {phone_number}.")
             # playsound('C:\\Users\\admin\\Downloads\\note.mp3')
+        user_id = request.user.id 
+        update_wallet_balance(user_id=user_id)
         acc = Account.objects.all()
         for acc in acc:
             print(acc.phone_number)

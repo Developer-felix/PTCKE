@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import pre_save,post_save
@@ -40,10 +41,19 @@ class Wallet(models.Model):
     def detail(self):
         return self.user.first_name 
 
+def generate_timestamp():
+    unformated_time = datetime.now()
+    formated_time = unformated_time.strftime("%Y%m%d%H%M%S")
+    return formated_time
+
 #Logic to update the balance of the wallet after 24 hours and weekly and monthly when the time is reached money should move from the wallet_balance to the withrawable_balance field according to the withdrawal_procedure and the withdrawable_settime and the ammount_to_withdraw field
-def update_wallet_balance(walet_id):
-    wallet = Wallet.objects.get(id=walet_id)
+def update_wallet_balance(user_id):
+    wallet = Wallet.objects.get(user_id=user_id)
+    current_time = generate_timestamp()
+    print(current_time)
+    print(wallet.updated_at)
     if wallet.widrawal_procedure == 1:
+        
         if wallet.withrawable_balance == 0:
             wallet.withrawable_balance = wallet.account_balance
             wallet.account_balance = 0
