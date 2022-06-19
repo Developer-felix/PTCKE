@@ -94,7 +94,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'ptc.sqlite3',
     }
-    #DB CONNCEPTION
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
     #     'NAME': 'ptc1',

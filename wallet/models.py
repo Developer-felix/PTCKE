@@ -88,31 +88,35 @@ def update_wallet_balance(user_id):
     second_difference = int(curent_time_s) - int(set_time_s)
     print("Seconds : {}",second_difference)
 
+    #Append Outputs in the format Year-Month-Day-Hour-Minute-Second
 
-
-
-
-
+    
 
     set_time = wallet.updated_at.strftime("%Y%m%d%H%M%S")
     print("Set Time",set_time)
     current_time = datetime.now().strftime("%Y%m%d%H%M%S")
     print("Current Time",current_time)
     if wallet.widrawal_procedure == 1:
-        
-        if wallet.withrawable_balance == 0:
-            wallet.withrawable_balance = wallet.account_balance
-            wallet.account_balance = 0
+        #after 24 hours the balance should be moved to the withrawable_balance field and the account_balance field should be updated
+        if day_difference == 1:
+            wallet.withrawable_balance = wallet.withrawable_balance + wallet.ammount_to_withdraw
+            wallet.account_balance = wallet.account_balance - wallet.ammount_to_withdraw
+            wallet.updated_at = datetime.now()
             wallet.save()
     elif wallet.widrawal_procedure == 2:
-        if wallet.withrawable_balance == 0:
-            wallet.withrawable_balance = wallet.account_balance
-            wallet.account_balance = 0
+        #after a week the balance should be moved to the withrawable_balance field and the account_balance field should be updated
+        if day_difference == 7:
+            wallet.withrawable_balance = wallet.withrawable_balance + wallet.ammount_to_withdraw
+            wallet.account_balance = wallet.account_balance - wallet.ammount_to_withdraw
+            wallet.updated_at = datetime.now()
             wallet.save()
+
     elif wallet.widrawal_procedure == 3:
-        if wallet.withrawable_balance == 0:
-            wallet.withrawable_balance = wallet.account_balance
-            wallet.account_balance = 0
+        #after a month the balance should be moved to the withrawable_balance field and the account_balance field should be updated
+        if day_difference == 30:
+            wallet.withrawable_balance = wallet.withrawable_balance + wallet.ammount_to_withdraw
+            wallet.account_balance = wallet.account_balance - wallet.ammount_to_withdraw
+            wallet.updated_at = datetime.now()
             wallet.save()
     else:
         pass
