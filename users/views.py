@@ -290,7 +290,6 @@ def child_dashboard(request):
 def parent_dashboard(request):
     global wallet_balance
     user_id = request.user.id 
-    user_phone = request.user.phone_number
     transactions = Transaction.objects.filter(sender=user_id).order_by('-id')
 
     children = Account.objects.filter(parent_id=user_id)
@@ -341,6 +340,11 @@ def add_child(request):
             child.country = country
             child.user_type = 2
             child.save()
+            print("Child Saved")
+            messages.info(request, f"Child added successfully")
+            return redirect("users:ptc_parent_add_child")
+            #print pin
+            print(pin)
             # response = child_password_and_phone_number_send_to_phone(
             #     phone=phone,
             #     password=pin,
@@ -367,8 +371,6 @@ def add_child(request):
             f = open(settings.MEDIA_ROOT + f"/africastalking/sms_consoles/{datetime.now().strftime('%Y%m%d')}_stks.txt", 'a')
         # f.write(str(response) + "\n")
     
-        print("Saved Child")
-        messages.info(request, f"Child has been added")
 
     return render(request,'parent/add_child.html')
 

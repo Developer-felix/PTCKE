@@ -1,14 +1,16 @@
 from datetime import datetime
+from pyexpat.errors import messages
 import time
 from turtle import done
 from django.shortcuts import redirect, render
+from grpc import Status
 from config.africastalkings import send_transaction_message_response_to_reciever_phone, send_transaction_message_response_to_sender_phone
 from transaction.models import Transaction
 from transaction.transaction_id import generate_transaction_code_id
 from users.models import Account
 # from config.PTC_MPESA.lipa_na_mpesa_online import lipa_na_mpesa
 
-from wallet.models import Wallet
+from wallet.models import Wallet, WithDrawals
 from wallet.mpes.lipa_na_mpesa_online import lipa_na_mpesa
 
 # Create your views here.
@@ -222,9 +224,30 @@ def child_withdraw(request):
         if int(ammount) <= int(wallet_balance):
             updated_balance = int(wallet_balance) - int(ammount)
             Wallet.objects.filter(user_id=request.user.id).update(account_balance=updated_balance)
+            withdrawalsaving = WithDrawals(
+                user_id=request.user.id,
+                ammount=ammount,
+                reason=reason,
+                status = "Successful",
+                ) 
+            withdrawalsaving.save()
+            
+            #Mesage to the user
+            # messages.info(request, f"Your request has been processed successfully")
+            #Sending the message to the user
             return redirect("success/?ammount="+ammount)
         else:
-            return redirect("error_withdraw/?ammount="+ammount)
+            message = "You don't have enough money in your wallet"
+            withdrawalsaving = WithDrawals(
+                user_id=request.user.id,
+                ammount=ammount,
+                reason=reason,
+                status = "Failed",
+                ) 
+            withdrawalsaving.save()
+            # messages.info(request, f"You don't have enough money in your wallet")
+            #Redirect to the same page
+            return redirect("users:ptc_child_withdraw")
     return render(request,'child/child_withdraw.html')
 
 def withdraw_success(request):

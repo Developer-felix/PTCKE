@@ -40,6 +40,17 @@ class Wallet(models.Model):
     def detail(self):
         return self.user.first_name 
 
+class WithDrawals(models.Model):
+    user = models.ForeignKey(Account,on_delete=models.CASCADE)
+    ammount = models.IntegerField(default=0)
+    status = models.CharField(max_length=255,null=True,blank=True)
+    reason = models.CharField(max_length=255,null=True,blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
+    updated_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
+    def __str__(self):
+        return f'{self.user.first_name} {self.user.last_name} - {self.ammount}'
+
+
 @receiver(post_save,sender=Account)
 def create_user_profile(sender,instance,created,**kwargs):
     if created:
