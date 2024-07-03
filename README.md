@@ -1,4 +1,4 @@
-Final Year Project Karatina University
+Project Karatina University
 
 <img src="screenshots/login.PNG" />
 <img align="left" src="screenshots/Otp.PNG" />
